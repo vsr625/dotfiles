@@ -1,0 +1,126 @@
+2017-03-12 12:54:55,532 INFO - root - Initialising application
+2017-03-12 12:54:55,536 INFO - root - Initialise global hotkeys
+2017-03-12 12:54:55,537 INFO - config-manager - No configuration found - creating new one
+2017-03-12 12:54:55,540 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:54:55,540 INFO - config-manager - Persisting configuration
+2017-03-12 12:54:55,541 INFO - config-manager - Finished persisting configuration - no errors
+2017-03-12 12:54:55,541 INFO - service - Starting service
+2017-03-12 12:54:55,587 INFO - interface - XRecord interface thread starting
+2017-03-12 12:54:55,588 INFO - service - Service now marked as running
+2017-03-12 12:54:55,625 INFO - root - Displaying configuration window
+2017-03-12 12:54:55,846 INFO - root - Entering main()
+2017-03-12 12:55:33,262 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:55:42,957 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:55:43,458 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:55:43,959 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:55:44,119 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:55:44,120 INFO - config-manager - Persisting configuration
+2017-03-12 12:55:44,120 INFO - config-manager - Backing up existing config file
+2017-03-12 12:55:44,120 INFO - config-manager - Finished persisting configuration - no errors
+2017-03-12 12:55:44,460 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:56:21,456 INFO - config-manager - Reloading global configuration
+2017-03-12 12:56:21,456 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:56:21,456 ERROR - pyinotify - add_watch: cannot watch /home/vsr/.config/autokey/data/My Phrases WD=-1, Errno=No such file or directory (ENOENT)
+2017-03-12 12:56:21,457 INFO - config-manager - Successfully reloaded global configuration
+2017-03-12 12:57:12,022 WARNING - config-manager - No action taken for delete event at /home/vsr/.config/autokey/data/Autokey
+2017-03-12 12:57:12,523 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:57:14,229 INFO - config-manager - Reloading global configuration
+2017-03-12 12:57:14,229 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:57:14,229 INFO - config-manager - Successfully reloaded global configuration
+2017-03-12 12:57:21,414 INFO - config-manager - Reloading global configuration
+2017-03-12 12:57:21,414 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:57:21,414 INFO - config-manager - Successfully reloaded global configuration
+2017-03-12 12:57:37,339 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:57:37,840 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:57:38,841 INFO - config-manager - Reloading global configuration
+2017-03-12 12:57:38,841 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:57:38,841 INFO - config-manager - Successfully reloaded global configuration
+2017-03-12 12:57:57,962 WARNING - config-manager - No action taken for create/update event at /home/vsr/.config/autokey/data/.control.json
+2017-03-12 12:57:58,464 WARNING - config-manager - No action taken for create/update event at /home/vsr/.config/autokey/data/.folder.json
+2017-03-12 12:57:58,965 WARNING - config-manager - No action taken for create/update event at /home/vsr/.config/autokey/data/.mailid.json
+2017-03-12 12:57:59,465 WARNING - config-manager - No action taken for create/update event at /home/vsr/.config/autokey/data/.venki.json
+2017-03-12 12:57:59,966 WARNING - config-manager - No action taken for create/update event at /home/vsr/.config/autokey/data/control.txt
+2017-03-12 12:58:00,467 WARNING - config-manager - No action taken for create/update event at /home/vsr/.config/autokey/data/mailid.txt
+2017-03-12 12:58:00,968 WARNING - config-manager - No action taken for create/update event at /home/vsr/.config/autokey/data/venki.txt
+2017-03-12 12:58:02,971 INFO - config-manager - Reloading global configuration
+2017-03-12 12:58:02,971 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:58:02,971 INFO - config-manager - Successfully reloaded global configuration
+2017-03-12 12:58:32,990 WARNING - config-manager - No action taken for create/update event at /home/vsr/.config/autokey/data/Sample Scripts/Autokey/.New Script.json
+2017-03-12 12:58:33,492 WARNING - config-manager - No action taken for create/update event at /home/vsr/.config/autokey/data/Sample Scripts/Autokey/.New Script.json
+2017-03-12 12:58:33,993 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:58:34,494 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:59:19,382 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:59:19,882 WARNING - config-manager - No action taken for delete event at /home/vsr/.config/autokey/data/Sample Scripts/Autokey/.New Script.json
+2017-03-12 12:59:21,385 INFO - config-manager - Reloading global configuration
+2017-03-12 12:59:21,385 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:59:21,385 INFO - config-manager - Successfully reloaded global configuration
+2017-03-12 12:59:33,088 WARNING - config-manager - No action taken for delete event at /home/vsr/.config/autokey/data/Sample Scripts/Autokey/.venki.json
+2017-03-12 12:59:33,590 WARNING - config-manager - No action taken for delete event at /home/vsr/.config/autokey/data/Sample Scripts/Autokey/.mailid.json
+2017-03-12 12:59:34,090 WARNING - config-manager - No action taken for delete event at /home/vsr/.config/autokey/data/Sample Scripts/Autokey/.folder.json
+2017-03-12 12:59:34,591 WARNING - config-manager - No action taken for delete event at /home/vsr/.config/autokey/data/Sample Scripts/Autokey/.control.json
+2017-03-12 12:59:39,150 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:59:39,651 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:59:40,152 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:59:40,653 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:59:41,654 INFO - config-manager - Reloading global configuration
+2017-03-12 12:59:41,654 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 12:59:41,654 INFO - config-manager - Successfully reloaded global configuration
+2017-03-12 12:59:45,873 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:00:27,810 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:00:34,976 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:00:42,159 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:00:43,161 INFO - config-manager - Reloading global configuration
+2017-03-12 13:00:43,161 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:00:43,161 INFO - config-manager - Successfully reloaded global configuration
+2017-03-12 13:00:51,208 WARNING - config-manager - No action taken for delete event at /home/vsr/.config/autokey/data/.control.json
+2017-03-12 13:00:51,709 WARNING - config-manager - No action taken for create/update event at /home/vsr/.config/autokey/data/New Folder/.control.json
+2017-03-12 13:00:52,210 WARNING - config-manager - No action taken for delete event at /home/vsr/.config/autokey/data/.mailid.json
+2017-03-12 13:00:52,711 WARNING - config-manager - No action taken for create/update event at /home/vsr/.config/autokey/data/New Folder/.mailid.json
+2017-03-12 13:00:53,211 WARNING - config-manager - No action taken for delete event at /home/vsr/.config/autokey/data/.venki.json
+2017-03-12 13:00:53,712 WARNING - config-manager - No action taken for create/update event at /home/vsr/.config/autokey/data/New Folder/.venki.json
+2017-03-12 13:01:03,414 INFO - config-manager - Reloading global configuration
+2017-03-12 13:01:03,414 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:01:03,414 INFO - config-manager - Successfully reloaded global configuration
+2017-03-12 13:01:12,109 WARNING - config-manager - No action taken for delete event at /home/vsr/.config/autokey/data/New Folder/.venki.json
+2017-03-12 13:01:12,610 WARNING - config-manager - No action taken for delete event at /home/vsr/.config/autokey/data/New Folder/.mailid.json
+2017-03-12 13:01:13,110 WARNING - config-manager - No action taken for delete event at /home/vsr/.config/autokey/data/New Folder/.folder.json
+2017-03-12 13:01:13,611 WARNING - config-manager - No action taken for delete event at /home/vsr/.config/autokey/data/New Folder/.control.json
+2017-03-12 13:01:25,204 WARNING - config-manager - No action taken for create/update event at /home/vsr/.config/autokey/data/New Folder/.mailid.json
+2017-03-12 13:01:25,705 WARNING - config-manager - No action taken for create/update event at /home/vsr/.config/autokey/data/New Folder/.mailid.json
+2017-03-12 13:01:26,206 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:01:26,707 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:02:45,499 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:02:46,000 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:02:46,501 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:02:47,503 INFO - config-manager - Reloading global configuration
+2017-03-12 13:02:47,503 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:02:47,503 INFO - config-manager - Successfully reloaded global configuration
+2017-03-12 13:03:20,651 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:03:21,152 WARNING - config-manager - No action taken for delete event at /home/vsr/.config/autokey/data/New Folder/.mailid.json
+2017-03-12 13:03:21,653 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:04:16,920 INFO - config-manager - Reloading global configuration
+2017-03-12 13:04:16,921 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:04:16,921 INFO - config-manager - Successfully reloaded global configuration
+2017-03-12 13:04:47,315 INFO - config-manager - Reloading global configuration
+2017-03-12 13:04:47,316 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:04:47,316 INFO - config-manager - Successfully reloaded global configuration
+2017-03-12 13:05:18,046 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:05:19,048 INFO - config-manager - Reloading global configuration
+2017-03-12 13:05:19,048 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:05:19,049 INFO - config-manager - Successfully reloaded global configuration
+2017-03-12 13:05:59,802 INFO - config-manager - Reloading global configuration
+2017-03-12 13:05:59,803 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:05:59,803 INFO - config-manager - Successfully reloaded global configuration
+2017-03-12 13:07:42,039 INFO - config-manager - Reloading global configuration
+2017-03-12 13:07:42,039 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:07:42,039 INFO - config-manager - Successfully reloaded global configuration
+2017-03-12 13:08:32,951 INFO - config-manager - Reloading global configuration
+2017-03-12 13:08:32,951 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:08:32,951 INFO - config-manager - Successfully reloaded global configuration
+2017-03-12 13:08:45,612 INFO - config-manager - Reloading global configuration
+2017-03-12 13:08:45,613 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2017-03-12 13:08:45,613 INFO - config-manager - Successfully reloaded global configuration
+2017-03-12 13:10:43,056 WARNING - config-manager - No action taken for delete event at /home/vsr/.config/autokey/data/venki.txt
+2017-03-12 13:10:43,557 WARNING - config-manager - No action taken for delete event at /home/vsr/.config/autokey/data/mailid.txt
+2017-03-12 13:10:44,058 WARNING - config-manager - No action taken for delete event at /home/vsr/.config/autokey/data/control.txt
+2017-03-12 13:10:44,559 WARNING - config-manager - No action taken for delete event at /home/vsr/.config/autokey/data/.folder.json

@@ -1,0 +1,49 @@
+[options]
+
+font = Operator Mono Regular 9
+mouse_autohide = true
+clickable_url = true
+browser = chromium
+#cursor_shape= ibeam
+scrollback_lines=1000
+
+[colors]
+
+# special
+foreground      = #f7f2bd
+foreground_bold = #f7f2bd
+cursor          = #f7f2bd
+background      = #0b0d2a
+
+# black
+color0  = #0b0d2a
+color8  = #666666
+
+# red
+color1  = #7c8264
+color9  = #7c8264
+
+# green
+color2  = #eb9731
+color10 = #eb9731
+
+# yellow
+color3  = #ab8e52
+color11 = #ab8e52
+
+# blue
+color4  = #eaa651
+color12 = #eaa651
+
+# magenta
+color5  = #facd65
+color13 = #facd65
+
+# cyan
+color6  = #fae5a2
+color14 = #fae5a2
+
+# white
+color7  = #f7f2bd
+color15 = #f7f2bd
+

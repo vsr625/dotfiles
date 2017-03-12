@@ -1,0 +1,10 @@
+while true
+do 
+inotifywait -e create --format '%f' /mnt/01D22DFF22B9FB90/Songs/Monstercat/ | while read FILE
+do
+  sleep 10
+  mpc update
+  sleep 5  
+  mpc add "$FILE" 
+done
+done
