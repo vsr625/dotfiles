@@ -117,4 +117,4 @@ alias ls='ls --color=auto'
 alias shutdown='poweroff'
 alias nv='vim .config/i3/config'
 alias tor='sh -c "/home/vsr/Downloads/tor-browser_en-US/Browser/start-tor-browser" &'
-
+alias ncp='ncmpcpp'
