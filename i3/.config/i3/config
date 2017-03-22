@@ -1,4 +1,4 @@
-set $mod Mod4 
+set $mod Mod4
 font pango:Hack 9
 
 bindsym $mod+Return exec termite
@@ -38,8 +38,7 @@ bindsym $mod+Shift+space floating toggle
 
 bindsym F1 exec --no-startup-id chromium
 bindsym F2 exec --no-startup-id thunar
-bindsym F3 exec --no-startup-id thunar /mnt/01D22DFF39E14260/
-bindsym F4 exec --no-startup-id thunar /mnt/01D22DFF22B9FB90/
+bindsym F3 exec --no-startup-id emacsclient -c -n
 bindsym F5 exec --no-startup-id mpc toggle
 bindsym F6 exec --no-startup-id mpc next
 bindsym F7 exec --no-startup-id mpc prev
@@ -169,3 +168,4 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 exec --no-startup-id polybar main -c "/home/vsr/.config/polybar"
+exec --no-startup-id emacs --daemon
