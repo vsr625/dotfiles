@@ -51,7 +51,7 @@ ZSH_THEME="dpoggi"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages themes zsh-syntax-highlighting zsh-autosuggestions thefuck)
+plugins=(colored-man-pages themes zsh-syntax-highlighting zsh-autosuggestions vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 

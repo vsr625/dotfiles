@@ -104,7 +104,7 @@ gaps outer 5
 
 mode "resize" {
         bindsym j resize shrink width 5 px or 5 ppt
-        bindsym k resize grow height 5 px or 5 ppt
+        bindsym k resize grow width 5 px or 5 ppt
         bindsym l resize shrink height 5 px or 5 ppt
         bindsym semicolon resize grow width 5 px or 5 ppt
         bindsym Left resize shrink width 5 px or 5 ppt
@@ -168,4 +168,3 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 exec --no-startup-id polybar main -c "/home/vsr/.config/polybar"
-exec --no-startup-id emacs --daemon

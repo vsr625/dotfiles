@@ -1,3 +1,5 @@
 *.pid
 *.log
 
+
+smplayer/\.config/smplayer/file_settings/
