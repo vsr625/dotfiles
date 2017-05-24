@@ -1,5 +1,7 @@
 set $mod Mod4
-font pango:Hack 9
+set_From_resource $fontn fontname
+set_from_resource $fonts fontsize
+font pango:$fontn $fonts
 
 bindsym $mod+Return exec urxvtc
 bindsym $mod+Escape kill
@@ -95,7 +97,7 @@ bindsym $mod+Shift+e exec poweroff
 floating_modifier $mod
 smart_borders on
 workspace_layout default
-for_window [class=".*"] border pixel 3
+for_window [class=".*"] border pixel 2
 new_float pixel 1
 new_window pixel 5
 hide_edge_borders vertical
@@ -116,20 +118,31 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-set $background #121417
-set $text       #d2d2d2
-set $workspace  #bf616a
-set $inactive   #636b78
-set $focused    #f7f2bd
-set $unfocused  #636b78
-set $status     #dadfea
-set $urgent     #ebcb8b
+set_from_resource $base00 color0 #000000
+set_from_resource $base01 color10 #000000
+set_from_resource $base02 color11 #000000
+set_from_resource $base03 color8 #000000
+set_from_resource $base04 color12 #000000
+set_from_resource $base05 color7 #000000
+set_from_resource $base06 color13 #000000
+set_from_resource $base07 color15 #000000
+set_from_resource $base08 color1 #000000
+set_from_resource $base09 color9 #000000
+set_from_resource $base0A color3 #000000
+set_from_resource $base0B color2 #000000
+set_from_resource $base0C color6 #000000
+set_from_resource $base0D color4 #000000
+set_from_resource $base0E color5 #000000
+set_from_resource $base0F color14 #000000
 
-client.focused          $focused    $focused    $text       $focused
-client.focused_inactive $unfocused  $unfocused  $text       $unfocused
-client.unfocused        $unfocused  $unfocused  $text       $unfocused
-client.urgent           $urgent     $urgent     $text       $urgent
-client.background       $background
+# Basic color configuration using the Base16 variables for windows and borders.
+# Property Name         Border  BG      Text    Indicator Child Border
+client.focused          $base05 $base0D $base00 $base0D $base01
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base0D
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base07
 
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
