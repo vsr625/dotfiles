@@ -1,7 +1,7 @@
 xrdb -load ~/.Xresources &
 numlockx &
 feh --bg-scale /home/vsr/.wall/wall.jpg &
-#mpd &
+mpd &
 compton &
 /usr/bin/dropbox &
 setxkbmap -option ctrl:nocaps &

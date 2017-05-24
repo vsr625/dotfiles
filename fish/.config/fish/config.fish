@@ -4,7 +4,7 @@ if status --is-login
    end
 end
 
-
+alias pingg="ping www.google.co.in"
 alias nf="neofetch"
 alias fls="ranger /mnt"
 alias s="sudo"
