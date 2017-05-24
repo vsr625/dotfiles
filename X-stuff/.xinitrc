@@ -5,13 +5,12 @@ mpd &
 compton &
 /usr/bin/dropbox &
 setxkbmap -option ctrl:nocaps &
-xcape -e 'Control_L=Escape' -t 175 &
 #setxkbmap -option 'caps:swapescape' &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 redshift &
 urxvtd -q -f -o &
 unclutter --timeout 10 &
+xcape -e 'Control_L=Escape' -t 175 &
 dunst &
-mpd-notification &
 #autokey-gtk &
 exec i3 
