@@ -38,7 +38,10 @@ URxvt*transparent:       false
 
 URxvt.font: xft:Source Code Pro Medium:pixelsize=12
 URxvt.letterSpace: 0
-
-*antialias:  true
-*autohint:   true
-
+Xft.lcdfilter: lcddefault
+Xft.antialias: true
+Xft.autohint: 0
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.dpi: 96
