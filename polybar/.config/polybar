@@ -1,13 +1,13 @@
 [colors]
-background = #0b0d2a
-background-alt = #0b0d2a
-foreground = "#D4D4D4"
-foreground-alt = #f3f4f5
+background = ${xrdb:background}
+background-alt = ${xrdb:background}
+foreground = ${xrdb:foreground}
+foreground-alt = ${xrdb:foreground}
 foreground-dim = #676e7d
 primary = #ffb52a
 secondary = #e60053
 alert = #C2FA11
-high = #f7f2bd
+high = ${xrdb:color10}
 high-alt = #0c2b41
 
 [global/wm]
@@ -31,7 +31,7 @@ padding-left = 0
 padding-right = 1
 module-margin-left = 0
 module-margin-right = 1
-font-0 = Operator Mono Medium:pixelsize=9;0
+font-0 = Pragmata Pro:pixelsize=9;2
 font-1 = FontAwesome:pixelsize=11;0
 modules-left = i3 xwindow
 modules-center = 
