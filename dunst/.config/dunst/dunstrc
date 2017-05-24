@@ -1,5 +1,5 @@
 [global]
-font = xos4 Terminus 9 
+font = Pragmata Pro 9 
 
 icon_position = left
 # <b>bold</b>
@@ -115,20 +115,21 @@ close_all = ctrl+shift+space
 history = ctrl+shift+h
 # context menu
 context = ctrl+shift+period
+
 [urgency_low]
-# IMPORTANT: colors have to be defined in quotation marks.
-# Otherwise the '#' and following  would be interpreted as a comment.
-background = "#0b0d2a"
-foreground = "#D4D4D4"
-timeout = 10
+    msg_urgency = low
+    background = "#151718"
+    foreground = "#41535B"
+
 [urgency_normal]
-background = "#0b0d2a"
-foreground = "#D4D4D4"
-timeout = 10
+    msg_urgency = normal
+    background = "#151718"
+    foreground = "#d6d6d6"
+
 [urgency_critical]
-background = "#0b0d2a"
-foreground = "#D4D4D4"
-timeout = 10
+    msg_urgency = critical
+    background = "#151718"
+    foreground = "#eeeeee"
 
 # Every section that isn't one of the above is interpreted as a rules
 # to override settings for certain messages.

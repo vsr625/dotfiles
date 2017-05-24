@@ -12,5 +12,6 @@ redshift &
 urxvtd -q -f -o &
 unclutter --timeout 10 &
 dunst &
+mpd-notification &
 #autokey-gtk &
 exec i3 
