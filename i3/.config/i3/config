@@ -181,6 +181,6 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-exec --no-startup-id sh -c "sleep 10 && mpd-notification"
+exec --no-startup-id sh -c "sleep 15 && mpd-notification"
 exec --no-startup-id xcape -e 'Control_L=Escape' -t 175
 exec --no-startup-id feh --bg-scale /home/vsr/.wall/wall.jpg 
