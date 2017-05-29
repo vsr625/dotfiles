@@ -4,11 +4,13 @@ if status --is-login
    end
 end
 
-alias pingg="ping www.google.co.in"
+alias .="./a.out < stdin"
+alias v="vim"
+alias gg="ping www.google.co.in"
 alias nf="neofetch"
 alias fls="ranger /mnt"
 alias s="sudo"
-alias .="cd .."
+alias ..="cd .."
 alias upate="sudo pacaur -Syu"
 alias cm="cmatrix"
 alias ncp="ncmpcpp"
