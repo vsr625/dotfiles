@@ -3,4 +3,5 @@ move
 cut 
 paste 
 search .po
+bulkrename 
 delete
