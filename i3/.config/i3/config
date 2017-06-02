@@ -7,6 +7,7 @@ bindsym $mod+Return exec urxvtc
 bindsym $mod+Escape kill
 bindsym $mod+Shift+d exec --no-startup-id rofi -show run
 bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+semicolon exec --no-startup-id xdg-open "$(locate home media mnt | rofi -threads 0 -width 60 -dmenu -i -p "locate:")"
 bindsym $mod+j focus left
 bindsym $mod+k focus right
 bindsym $mod+h focus up
