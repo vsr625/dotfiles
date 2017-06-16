@@ -186,10 +186,11 @@ exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id sh -c "sleep 15 && mpd-notification"
 exec --no-startup-id xcape -e 'Control_L=Escape' -t 175
 exec --no-startup-id feh --bg-scale /home/vsr/.wall/wall.jpg 
-exec --no-startup-id unclutter --timeout 10
+exec --no-startup-id unclutter
 exec --no-startup-id dunst
 exec --no-startup-id redshift
 exec --no-startup-id compton
 exec --no-startup-id numlockx
 exec --no-startup-id urxvtd -q -f -o
 exec --no-startup-id mpd
+exec --no-startup-id emacs --daemon
