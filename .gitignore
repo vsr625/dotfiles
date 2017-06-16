@@ -7,3 +7,5 @@ smplayer/\.config/smplayer/file_settings/
 ranger/\.config/ranger/bookmarks
 
 smplayer/\.config/smplayer/playlist\.ini
+
+fish/\.config/fish/fishd\.manjaro-i3
