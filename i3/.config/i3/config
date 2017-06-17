@@ -51,8 +51,6 @@ bindsym $mod+KP_Add exec --no-startup-id amixer set Master 2%+
 bindsym $mod+KP_Subtract exec --no-startup-id amixer set Master 2%-
 bindsym Control+KP_Add exec --no-startup-id mpc volume +2
 bindsym Control+KP_Subtract exec --no-startup-id mpc volume -2
-bindsym $mod+Insert exec xfce4-taskmanager
-bindsym $mod+t exec --no-startup-id sh -c /home/vsr/Downloads/tor-browser_en-US/Browser/start-tor-browser
 bindsym $mod+p exec --no-startup-id polybar main -c "/home/vsr/.config/polybar"
 bindsym $mod+Shift+p exec --no-startup-id pkill polybar
 bindsym $mod+Shift+s exec --no-startup-id systemctl suspend
