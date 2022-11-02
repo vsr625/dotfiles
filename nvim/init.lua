@@ -77,4 +77,21 @@ require('packer').startup(function(use)
 			}
 		end
 	}
+
+	-- Status line
+	use {
+		'nvim-lualine/lualine.nvim',
+		config = function()
+			require('lualine').setup {
+				options = {
+					theme = 'tokyonight',
+					icons_enabled = false,
+				},
+				sections = {
+					lualine_x = { 'filetype' },
+				}
+			}
+		end
+	}
+
 end)
