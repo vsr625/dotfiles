@@ -4,164 +4,184 @@ vim.opt.numberwidth = 4
 vim.opt.shiftwidth = 2
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
-vim.opt.colorcolumn = '100'
+vim.opt.colorcolumn = "100"
 vim.opt.cursorline = true
 vim.opt.laststatus = 3
-vim.opt.signcolumn = 'yes'
-vim.opt.mouse = 'a'
+vim.opt.signcolumn = "yes"
+vim.opt.mouse = "a"
 vim.opt.showmode = false
-vim.opt.completeopt = 'menu,menuone,noselect'
+vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.pumheight = 20
 
 -- Keymaps
-vim.g.mapleader = ' '
-vim.keymap.set({ 'n', 'v' }, 'ga', '0')
-vim.keymap.set({ 'n', 'v' }, 'gl', '$')
-vim.keymap.set('i', '<C-h>', '<C-w>')
-vim.keymap.set('n', 'U', '<C-r>')
+vim.g.mapleader = " "
+vim.keymap.set({ "n", "v" }, "ga", "0")
+vim.keymap.set({ "n", "v" }, "gl", "$")
+vim.keymap.set("i", "<C-h>", "<C-w>")
+vim.keymap.set("n", "U", "<C-r>")
 
-vim.keymap.set('n', '<C-l>', '<C-w>l')
-vim.keymap.set('n', '<C-h>', '<C-w>h')
-vim.keymap.set('n', '<C-k>', '<C-w>k')
-vim.keymap.set('n', '<C-j>', '<C-w>j')
+vim.keymap.set("n", "<C-l>", "<C-w>l")
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
 
-vim.keymap.set('v', '<leader>y', '"+y')
-vim.keymap.set('n', '<leader>h', ':nohl<Cr>')
-vim.keymap.set('n', '<leader>e', ':Explore<Cr>')
-vim.keymap.set('n', '<leader>q', ':q<Cr>')
-vim.keymap.set('n', '<leader>s', ':so %<Cr>')
-vim.keymap.set('n', '<leader>Q', ':q!<Cr>')
-vim.keymap.set('n', '<leader>w', ':w<Cr>')
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>h", ":nohl<Cr>")
+vim.keymap.set("n", "<leader>e", ":Explore<Cr>")
+vim.keymap.set("n", "<leader>q", ":q<Cr>")
+vim.keymap.set("n", "<leader>s", ":so %<Cr>")
+vim.keymap.set("n", "<leader>Q", ":q!<Cr>")
+vim.keymap.set("n", "<leader>w", ":w<Cr>")
+vim.keymap.set("n", "<leader>F", ":Format<Cr>")
 
-vim.keymap.set('n', '<leader>f', function() require('telescope.builtin').find_files() end)
-vim.keymap.set('n', '<leader>g', function() require('telescope.builtin').live_grep() end)
-vim.keymap.set('n', '<leader>b', function() require('telescope.builtin').buffers() end)
+vim.keymap.set("n", "<leader>f", function()
+  require("telescope.builtin").find_files()
+end)
+vim.keymap.set("n", "<leader>g", function()
+  require("telescope.builtin").live_grep()
+end)
+vim.keymap.set("n", "<leader>b", function()
+  require("telescope.builtin").buffers()
+end)
 
-vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
-vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
-vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
-vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
-vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
-vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
+vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>")
+vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
+vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
+vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>")
+vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
+vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>")
 
 -- Plugins
-require('packer').startup(function(use)
+require("packer").startup(function(use)
   -- Packer can manage itself
   use {
-    'wbthomason/packer.nvim'
+    "wbthomason/packer.nvim",
   }
 
   -- Colorscheme
   use {
-    'folke/tokyonight.nvim',
+    "folke/tokyonight.nvim",
     config = function()
       vim.cmd("colorscheme tokyonight-storm")
-    end
+    end,
   }
 
   -- Git signs
   use {
-    'lewis6991/gitsigns.nvim',
+    "lewis6991/gitsigns.nvim",
     config = function()
-      require('gitsigns').setup {
-	numhl = true,
-
+      require("gitsigns").setup {
+        numhl = true,
       }
-    end
+    end,
   }
 
   -- Smooth Scrolling
   use {
-    'karb94/neoscroll.nvim',
+    "karb94/neoscroll.nvim",
     config = function()
-      require('neoscroll').setup {
-	easing_function = 'quadratic'
+      require("neoscroll").setup {
+        easing_function = "quadratic",
       }
-    end
+    end,
   }
 
   -- Status line
   use {
-    'nvim-lualine/lualine.nvim',
+    "nvim-lualine/lualine.nvim",
     config = function()
-      require('lualine').setup {
-	options = {
-	  theme = 'tokyonight',
-	  icons_enabled = false,
-	},
-	sections = {
-	  lualine_x = { 'filetype' },
-	}
+      require("lualine").setup {
+        options = {
+          theme = "tokyonight",
+          icons_enabled = false,
+        },
+        sections = {
+          lualine_b = { "branch", "diagnostics" },
+          lualine_x = { "filetype" },
+        },
       }
-    end
+    end,
   }
 
   -- Fuzzy finder
   use {
-    'nvim-telescope/telescope.nvim',
-    requires = { { 'nvim-lua/plenary.nvim' } },
+    "nvim-telescope/telescope.nvim",
+    requires = { { "nvim-lua/plenary.nvim" } },
     config = function()
-      require('telescope').setup {
-	pickers = {
-	  find_files = {
-	    theme = "dropdown",
-	  }
-	},
+      require("telescope").setup {
+        pickers = {
+          find_files = {
+            theme = "dropdown",
+          },
+        },
       }
-    end
+    end,
   }
 
   -- Treesitter
   use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
     config = function()
-      require('nvim-treesitter.configs').setup {
-	ensure_installed = { "lua", "go" },
-	sync_install = true,
-	auto_install = true,
-	highlight = {
-	  enable = true,
-	  additional_vim_regex_highlighting = false,
-	},
-	indent = {
-	  enable = true
-	}
+      require("nvim-treesitter.configs").setup {
+        ensure_installed = { "lua", "go" },
+        sync_install = true,
+        auto_install = true,
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = false,
+        },
+        indent = {
+          enable = true,
+        },
       }
-    end
+    end,
   }
 
   -- LSP Config
   use {
     "neovim/nvim-lspconfig",
     config = function()
-
       -- Lua setup
       require("lspconfig").sumneko_lua.setup {
-	settings = {
-	  Lua = {
-	    diagnostics = {
-	      globals = { 'vim' }
-	    }
-	  }
-	},
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { "vim" },
+            },
+          },
+        },
       }
-    end
+    end,
   }
 
   use {
     "williamboman/mason.nvim",
     config = function()
       require("mason").setup()
-    end
+    end,
   }
 
   use {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup {
-	automatic_installation = true
+        automatic_installation = true,
       }
-    end
+    end,
+  }
+
+  -- Formatter
+  use {
+    "mhartington/formatter.nvim",
+    config = function()
+      require("formatter").setup {
+        filetype = {
+          lua = {
+            require("formatter.filetypes.lua").stylua,
+          },
+        },
+      }
+    end,
   }
 end)
