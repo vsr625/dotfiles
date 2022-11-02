@@ -51,6 +51,18 @@ require('packer').startup(function(use)
 		end
 	}
 
+	-- Git signs
+	use {
+		'lewis6991/gitsigns.nvim',
+		config = function()
+			require('gitsigns').setup {
+				numhl = true,
+
+			}
+		end
+	}
+
+
 	-- Fuzzy finder
 	use {
 		'nvim-telescope/telescope.nvim',
