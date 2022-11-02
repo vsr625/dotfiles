@@ -90,10 +90,19 @@ require("packer").startup(function(use)
     end,
   }
 
+  -- Indent guides
   use {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
       require("indent_blankline").setup {}
+    end,
+  }
+
+  -- Auto brace closer
+  use {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup {}
     end,
   }
 
