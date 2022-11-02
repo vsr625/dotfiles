@@ -38,68 +38,88 @@ vim.keymap.set('n', '<leader>b', function() require('telescope.builtin').buffers
 
 -- Plugins
 require('packer').startup(function(use)
-	-- Packer can manage itself
-	use {
-		'wbthomason/packer.nvim'
-	}
+  -- Packer can manage itself
+  use {
+    'wbthomason/packer.nvim'
+  }
 
-	-- Colorscheme
-	use {
-		'folke/tokyonight.nvim',
-		config = function()
-			vim.cmd("colorscheme tokyonight-storm")
-		end
-	}
+  -- Colorscheme
+  use {
+    'folke/tokyonight.nvim',
+    config = function()
+      vim.cmd("colorscheme tokyonight-storm")
+    end
+  }
 
-	-- Git signs
-	use {
-		'lewis6991/gitsigns.nvim',
-		config = function()
-			require('gitsigns').setup {
-				numhl = true,
+  -- Git signs
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup {
+	numhl = true,
 
-			}
-		end
-	}
+      }
+    end
+  }
 
-	-- Smooth Scrolling
-	use {
-	  'karb94/neoscroll.nvim',
-	  config = function()
-	    require('neoscroll').setup {
-	      easing_function = 'quadratic'
-	    }
-	  end
-	}
+  -- Smooth Scrolling
+  use {
+    'karb94/neoscroll.nvim',
+    config = function()
+      require('neoscroll').setup {
+	easing_function = 'quadratic'
+      }
+    end
+  }
 
-	-- Status line
-	use {
-		'nvim-lualine/lualine.nvim',
-		config = function()
-			require('lualine').setup {
-				options = {
-					theme = 'tokyonight',
-					icons_enabled = false,
-				},
-				sections = {
-					lualine_x = { 'filetype' },
-				}
-			}
-		end
+  -- Status line
+  use {
+    'nvim-lualine/lualine.nvim',
+    config = function()
+      require('lualine').setup {
+	options = {
+	  theme = 'tokyonight',
+	  icons_enabled = false,
+	},
+	sections = {
+	  lualine_x = { 'filetype' },
 	}
+      }
+    end
+  }
 
-	-- Fuzzy finder
-	use {
-		'nvim-telescope/telescope.nvim',
-		requires = { { 'nvim-lua/plenary.nvim' } },
-		config = function()
-			require('telescope').setup {
-				pickers = {
-					find_files = {
-						theme = "dropdown",
-					}
-				},
-			}
-		end
+  -- Fuzzy finder
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { { 'nvim-lua/plenary.nvim' } },
+    config = function()
+      require('telescope').setup {
+	pickers = {
+	  find_files = {
+	    theme = "dropdown",
+	  }
+	},
+      }
+    end
+  }
+
+  -- Treesitter
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function()
+      require('nvim-treesitter.configs').setup {
+	ensure_installed = { "lua" ,"go"},
+	sync_install = true,
+	auto_install = true,
+	highlight = {
+	  enable = true,
+	  additional_vim_regex_highlighting = false,
+	},
+	indent = {
+	  enable = true
 	}
+      }
+    end
+  }
 end)
