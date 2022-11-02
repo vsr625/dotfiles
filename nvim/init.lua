@@ -32,3 +32,37 @@ vim.keymap.set('n', '<leader>q', ':q<Cr>')
 vim.keymap.set('n', '<leader>s', ':so %<Cr>')
 vim.keymap.set('n', '<leader>Q', ':q!<Cr>')
 vim.keymap.set('n', '<leader>w', ':w<Cr>')
+vim.keymap.set('n', '<leader>f', function() require('telescope.builtin').find_files() end)
+vim.keymap.set('n', '<leader>g', function() require('telescope.builtin').live_grep() end)
+vim.keymap.set('n', '<leader>b', function() require('telescope.builtin').buffers() end)
+
+-- Plugins
+require('packer').startup(function(use)
+	-- Packer can manage itself
+	use {
+		'wbthomason/packer.nvim'
+	}
+
+	-- Colorscheme
+	use {
+		'folke/tokyonight.nvim',
+		config = function()
+			vim.cmd("colorscheme tokyonight-storm")
+		end
+	}
+
+	-- Fuzzy finder
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = { { 'nvim-lua/plenary.nvim' } },
+		config = function()
+			require('telescope').setup {
+				pickers = {
+					find_files = {
+						theme = "dropdown",
+					}
+				},
+			}
+		end
+	}
+end)
