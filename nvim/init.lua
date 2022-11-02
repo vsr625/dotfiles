@@ -62,20 +62,14 @@ require('packer').startup(function(use)
 		end
 	}
 
-
-	-- Fuzzy finder
+	-- Smooth Scrolling
 	use {
-		'nvim-telescope/telescope.nvim',
-		requires = { { 'nvim-lua/plenary.nvim' } },
-		config = function()
-			require('telescope').setup {
-				pickers = {
-					find_files = {
-						theme = "dropdown",
-					}
-				},
-			}
-		end
+	  'karb94/neoscroll.nvim',
+	  config = function()
+	    require('neoscroll').setup {
+	      easing_function = 'quadratic'
+	    }
+	  end
 	}
 
 	-- Status line
@@ -94,4 +88,18 @@ require('packer').startup(function(use)
 		end
 	}
 
+	-- Fuzzy finder
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = { { 'nvim-lua/plenary.nvim' } },
+		config = function()
+			require('telescope').setup {
+				pickers = {
+					find_files = {
+						theme = "dropdown",
+					}
+				},
+			}
+		end
+	}
 end)
