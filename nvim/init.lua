@@ -2,6 +2,7 @@
 vim.opt.number = true
 vim.opt.numberwidth = 4
 vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
 vim.opt.colorcolumn = "100"
@@ -12,6 +13,9 @@ vim.opt.mouse = "a"
 vim.opt.showmode = false
 vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.pumheight = 20
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
+vim.opt.listchars:append("eol:↴")
 
 -- Keymaps
 vim.g.mapleader = " "
@@ -86,6 +90,13 @@ require("packer").startup(function(use)
     end,
   }
 
+  use {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      require("indent_blankline").setup {}
+    end,
+  }
+
   -- Status line
   use {
     "nvim-lualine/lualine.nvim",
@@ -155,6 +166,7 @@ require("packer").startup(function(use)
     end,
   }
 
+  -- External Server installer
   use {
     "williamboman/mason.nvim",
     config = function()
