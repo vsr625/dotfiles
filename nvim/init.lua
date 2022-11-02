@@ -32,9 +32,17 @@ vim.keymap.set('n', '<leader>q', ':q<Cr>')
 vim.keymap.set('n', '<leader>s', ':so %<Cr>')
 vim.keymap.set('n', '<leader>Q', ':q!<Cr>')
 vim.keymap.set('n', '<leader>w', ':w<Cr>')
+
 vim.keymap.set('n', '<leader>f', function() require('telescope.builtin').find_files() end)
 vim.keymap.set('n', '<leader>g', function() require('telescope.builtin').live_grep() end)
 vim.keymap.set('n', '<leader>b', function() require('telescope.builtin').buffers() end)
+
+vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
+vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
+vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
+vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
+vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
+vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
 
 -- Plugins
 require('packer').startup(function(use)
@@ -109,7 +117,7 @@ require('packer').startup(function(use)
     run = ':TSUpdate',
     config = function()
       require('nvim-treesitter.configs').setup {
-	ensure_installed = { "lua" ,"go"},
+	ensure_installed = { "lua", "go" },
 	sync_install = true,
 	auto_install = true,
 	highlight = {
@@ -119,6 +127,40 @@ require('packer').startup(function(use)
 	indent = {
 	  enable = true
 	}
+      }
+    end
+  }
+
+  -- LSP Config
+  use {
+    "neovim/nvim-lspconfig",
+    config = function()
+
+      -- Lua setup
+      require("lspconfig").sumneko_lua.setup {
+	settings = {
+	  Lua = {
+	    diagnostics = {
+	      globals = { 'vim' }
+	    }
+	  }
+	},
+      }
+    end
+  }
+
+  use {
+    "williamboman/mason.nvim",
+    config = function()
+      require("mason").setup()
+    end
+  }
+
+  use {
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require("mason-lspconfig").setup {
+	automatic_installation = true
       }
     end
   }
