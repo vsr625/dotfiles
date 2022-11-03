@@ -37,6 +37,7 @@ vim.keymap.set("n", "<leader>s", ":so %<Cr>")
 vim.keymap.set("n", "<leader>Q", ":q!<Cr>")
 vim.keymap.set("n", "<leader>w", ":w<Cr>")
 vim.keymap.set("n", "<leader>F", ":Format<Cr>")
+vim.keymap.set("n", "<leader>T", ":NvimTreeToggle<Cr>")
 
 vim.keymap.set("n", "<leader>f", function()
   require("telescope.builtin").find_files()
@@ -132,6 +133,23 @@ require("packer").startup(function(use)
         pickers = {
           find_files = {
             theme = "dropdown",
+          },
+        },
+      }
+    end,
+  }
+
+  use {
+    "nvim-tree/nvim-tree.lua",
+    config = function()
+      require("nvim-tree").setup {
+        renderer = {
+          icons = {
+            show = {
+              file = false,
+              folder = false,
+              folder_arrow = false,
+            },
           },
         },
       }
