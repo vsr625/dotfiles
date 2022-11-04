@@ -215,6 +215,12 @@ require("packer").startup(function(use)
   use {
     "neovim/nvim-lspconfig",
     config = function()
+      -- Pretify lsp windows
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+
+      vim.lsp.handlers["textDocument/signatureHelp"] =
+        vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+
       -- Lua setup
       require("lspconfig").sumneko_lua.setup {
         settings = {
