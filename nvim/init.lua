@@ -183,6 +183,14 @@ require("packer").startup(function(use)
     end,
   }
 
+  -- Comment support
+  use {
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup()
+    end,
+  }
+
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
