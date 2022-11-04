@@ -251,6 +251,69 @@ require("packer").startup(function(use)
     end,
   }
 
+  -- Autocomplete stuff
+  use {
+    "hrsh7th/nvim-cmp",
+    requires = { { "hrsh7th/cmp-buffer" }, { "hrsh7th/cmp-path" }, { "hrsh7th/cmp-nvim-lsp" }, { "L3MON4D3/LuaSnip" } },
+    config = function()
+      local cmp = require("cmp")
+      local luasnip = require("luasnip")
+      local select_opts = { behavior = cmp.SelectBehavior.Select }
+      cmp.setup {
+        snippet = {
+          expand = function(args)
+            luasnip.lsp_expand(args.body)
+          end,
+        },
+        sources = cmp.config.sources {
+          { name = "nvim_lsp" },
+          { name = "buffer" },
+          { name = "path" },
+        },
+        window = {
+          documentation = cmp.config.window.bordered(),
+        },
+        formatting = {
+          fields = { "menu", "abbr", "kind" },
+          format = function(entry, item)
+            local menu_icon = {
+              nvim_lsp = "λ",
+              luasnip = "⋗",
+              buffer = "Ω",
+              path = "🖫",
+            }
+
+            item.menu = menu_icon[entry.source.name]
+            return item
+          end,
+        },
+        mapping = {
+          ["<Up>"] = cmp.mapping.select_prev_item(select_opts),
+          ["<Down>"] = cmp.mapping.select_next_item(select_opts),
+          ["<CR>"] = cmp.mapping.confirm { select = true },
+          ["<Tab>"] = cmp.mapping(function(fallback)
+            local col = vim.fn.col(".") - 1
+
+            if cmp.visible() then
+              cmp.select_next_item(select_opts)
+            elseif col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
+              fallback()
+            else
+              cmp.complete()
+            end
+          end, { "i", "s" }),
+          ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item(select_opts)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+        },
+      }
+    end,
+  }
+
   -- Formatter
   use {
     "mhartington/formatter.nvim",
