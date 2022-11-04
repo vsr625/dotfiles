@@ -175,6 +175,14 @@ require("packer").startup(function(use)
     "kdheepak/lazygit.nvim",
   }
 
+  -- Auto save files - so you don't have to
+  use {
+    "Pocco81/auto-save.nvim",
+    config = function()
+      require("auto-save").setup {}
+    end,
+  }
+
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
