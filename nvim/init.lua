@@ -38,8 +38,9 @@ vim.keymap.set("n", "<leader>Q", ":q!<Cr>")
 vim.keymap.set("n", "<leader>w", ":w<Cr>")
 vim.keymap.set("n", "<leader>F", ":Format<Cr>")
 vim.keymap.set("n", "<leader>T", ":NvimTreeToggle<Cr>")
+vim.keymap.set("n", "<leader>f", ":Format<Cr>")
 
-vim.keymap.set("n", "<leader>f", function()
+vim.keymap.set("n", "<leader>F", function()
   require("telescope.builtin").find_files()
 end)
 vim.keymap.set("n", "<leader>g", function()
@@ -139,9 +140,21 @@ require("packer").startup(function(use)
     end,
   }
 
+  -- File explorer
+	-- TODO - maybe try different alternative for this
   use {
     "nvim-tree/nvim-tree.lua",
     config = function()
+      -- Auto close vim if file explorer is the last thing open
+      vim.api.nvim_create_autocmd("BufEnter", {
+        nested = true,
+        callback = function()
+          if #vim.api.nvim_list_wins() == 1 and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil then
+            vim.cmd("quit")
+          end
+        end,
+      })
+
       require("nvim-tree").setup {
         renderer = {
           icons = {
