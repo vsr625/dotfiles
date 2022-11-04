@@ -39,11 +39,12 @@ vim.keymap.set("n", "<leader>w", ":w<Cr>")
 vim.keymap.set("n", "<leader>F", ":Format<Cr>")
 vim.keymap.set("n", "<leader>T", ":NvimTreeToggle<Cr>")
 vim.keymap.set("n", "<leader>f", ":Format<Cr>")
+vim.keymap.set("n", "<leader>g", ":LazyGit<Cr>")
 
 vim.keymap.set("n", "<leader>F", function()
   require("telescope.builtin").find_files()
 end)
-vim.keymap.set("n", "<leader>g", function()
+vim.keymap.set("n", "<leader>G", function()
   require("telescope.builtin").live_grep()
 end)
 vim.keymap.set("n", "<leader>b", function()
@@ -141,7 +142,7 @@ require("packer").startup(function(use)
   }
 
   -- File explorer
-	-- TODO - maybe try different alternative for this
+  -- TODO - maybe try different alternative for this
   use {
     "nvim-tree/nvim-tree.lua",
     config = function()
@@ -167,6 +168,11 @@ require("packer").startup(function(use)
         },
       }
     end,
+  }
+
+  -- Git integration
+  use {
+    "kdheepak/lazygit.nvim",
   }
 
   -- Treesitter
