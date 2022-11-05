@@ -208,12 +208,15 @@ require("packer").startup(function(use)
   -- LSP Config
   use {
     "neovim/nvim-lspconfig",
+    requires = { "hrsh7th/nvim-cmp" },
     config = function()
       -- Pretify lsp windows
       vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
       vim.lsp.handlers["textDocument/signatureHelp"] =
         vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       -- Lua setup
       require("lspconfig").sumneko_lua.setup {
@@ -224,6 +227,7 @@ require("packer").startup(function(use)
             },
           },
         },
+        capabilities = capabilities,
       }
 
       vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>")
