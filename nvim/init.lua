@@ -254,7 +254,16 @@ require("packer").startup(function(use)
   -- Autocomplete stuff
   use {
     "hrsh7th/nvim-cmp",
-    requires = { { "hrsh7th/cmp-buffer" }, { "hrsh7th/cmp-path" }, { "hrsh7th/cmp-nvim-lsp" }, { "L3MON4D3/LuaSnip" } },
+    requires = {
+      { "hrsh7th/cmp-buffer" },
+      { "hrsh7th/cmp-path" },
+      { "hrsh7th/cmp-nvim-lsp" },
+      { "L3MON4D3/LuaSnip" },
+      { "saadparwaiz1/cmp_luasnip" },
+      { "hrsh7th/cmp-cmdline" },
+      { "dmitmel/cmp-cmdline-history" },
+      { "hrsh7th/cmp-calc" },
+    },
     config = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")
@@ -269,6 +278,7 @@ require("packer").startup(function(use)
           { name = "nvim_lsp" },
           { name = "buffer" },
           { name = "path" },
+          { name = "calc" },
         },
         window = {
           documentation = cmp.config.window.bordered(),
@@ -311,6 +321,22 @@ require("packer").startup(function(use)
           end, { "i", "s" }),
         },
       }
+
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = "cmdline" },
+          { name = "path" },
+          { name = "cmdline_history" },
+        },
+      })
+
+      cmp.setup.cmdline("/", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = "buffer" },
+        },
+      })
     end,
   }
 
