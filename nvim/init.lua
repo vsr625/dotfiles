@@ -114,6 +114,12 @@ require("packer").startup(function(use)
         pickers = {
           find_files = {
             theme = "dropdown",
+            mappings = {
+              i = {
+                ["<C-j>"] = require("telescope.actions").move_selection_next,
+                ["<C-k>"] = require("telescope.actions").move_selection_previous,
+              },
+            },
           },
         },
       }
