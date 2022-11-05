@@ -236,6 +236,10 @@ require("packer").startup(function(use)
         capabilities = capabilities,
       }
 
+      require("lspconfig").gopls.setup {
+        capabilities = capabilities,
+      }
+
       vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>")
       vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
       vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
