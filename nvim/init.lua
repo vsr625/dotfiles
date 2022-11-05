@@ -36,27 +36,6 @@ vim.keymap.set("n", "<leader>q", ":q<Cr>")
 vim.keymap.set("n", "<leader>s", ":so %<Cr>")
 vim.keymap.set("n", "<leader>Q", ":q!<Cr>")
 vim.keymap.set("n", "<leader>w", ":w<Cr>")
-vim.keymap.set("n", "<leader>F", ":Format<Cr>")
-vim.keymap.set("n", "<leader>T", ":NvimTreeToggle<Cr>")
-vim.keymap.set("n", "<leader>f", ":Format<Cr>")
-vim.keymap.set("n", "<leader>g", ":LazyGit<Cr>")
-
-vim.keymap.set("n", "<leader>F", function()
-  require("telescope.builtin").find_files()
-end)
-vim.keymap.set("n", "<leader>G", function()
-  require("telescope.builtin").live_grep()
-end)
-vim.keymap.set("n", "<leader>b", function()
-  require("telescope.builtin").buffers()
-end)
-
-vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>")
-vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
-vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
-vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>")
-vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
-vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>")
 
 -- Plugins
 require("packer").startup(function(use)
@@ -138,6 +117,16 @@ require("packer").startup(function(use)
           },
         },
       }
+
+      vim.keymap.set("n", "<leader>F", function()
+        require("telescope.builtin").find_files()
+      end)
+      vim.keymap.set("n", "<leader>G", function()
+        require("telescope.builtin").live_grep()
+      end)
+      vim.keymap.set("n", "<leader>b", function()
+        require("telescope.builtin").buffers()
+      end)
     end,
   }
 
@@ -167,12 +156,17 @@ require("packer").startup(function(use)
           },
         },
       }
+
+      vim.keymap.set("n", "<leader>T", ":NvimTreeToggle<Cr>")
     end,
   }
 
   -- Git integration
   use {
     "kdheepak/lazygit.nvim",
+    config = function()
+      vim.keymap.set("n", "<leader>g", ":LazyGit<Cr>")
+    end,
   }
 
   -- Auto save files - so you don't have to
@@ -231,6 +225,13 @@ require("packer").startup(function(use)
           },
         },
       }
+
+      vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>")
+      vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
+      vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
+      vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>")
+      vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
+      vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>")
     end,
   }
 
@@ -351,6 +352,8 @@ require("packer").startup(function(use)
           },
         },
       }
+
+      vim.keymap.set("n", "<leader>f", ":Format<Cr>")
     end,
   }
 end)
