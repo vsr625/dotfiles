@@ -105,10 +105,11 @@ require("packer").startup(function(use)
     end,
   }
 
-  -- Fuzzy finder
+  -- Fuzzy finders
+  use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
   use {
     "nvim-telescope/telescope.nvim",
-    requires = { { "nvim-lua/plenary.nvim" } },
+    requires = { { "nvim-lua/plenary.nvim" }, { "nvim-telescope/telescope-fzf-native.nvim" } },
     config = function()
       require("telescope").setup {
         pickers = {
@@ -124,6 +125,8 @@ require("packer").startup(function(use)
           },
         },
       }
+
+      require("telescope").load_extension("fzf")
 
       vim.keymap.set("n", "<leader>F", function()
         require("telescope.builtin").find_files()
