@@ -37,6 +37,14 @@ vim.keymap.set("n", "<leader>s", ":so %<Cr>")
 vim.keymap.set("n", "<leader>Q", ":q!<Cr>")
 vim.keymap.set("n", "<leader>w", ":w<Cr>")
 
+-- Filetype specific config
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "go",
+  callback = function()
+    vim.opt_local.tabstop = 4
+  end,
+})
+
 -- Plugins
 require("packer").startup(function(use)
   -- Packer can manage itself
