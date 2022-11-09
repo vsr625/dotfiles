@@ -14,8 +14,6 @@ vim.opt.showmode = false
 vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.pumheight = 20
 vim.opt.list = true
-vim.opt.listchars:append("space:⋅")
-vim.opt.listchars:append("eol:↴")
 
 -- Keymaps
 vim.g.mapleader = " "
