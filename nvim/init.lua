@@ -112,22 +112,36 @@ require("packer").startup(function(use)
     requires = { { "nvim-lua/plenary.nvim" }, { "nvim-telescope/telescope-fzf-native.nvim" } },
     config = function()
       require("telescope").setup {
+        defaults = {
+          mappings = {
+            i = {
+              ["<C-j>"] = require("telescope.actions").move_selection_next,
+              ["<C-k>"] = require("telescope.actions").move_selection_previous,
+              ["<C-h>"] = { "<c-s-w>", type = "command" },
+            },
+          },
+        },
         pickers = {
           find_files = {
             theme = "dropdown",
-            mappings = {
-              i = {
-                ["<C-j>"] = require("telescope.actions").move_selection_next,
-                ["<C-k>"] = require("telescope.actions").move_selection_previous,
-                ["<C-h>"] = { "<c-s-w>", type = "command" },
-              },
-            },
+          },
+          lsp_dynamic_workspace_symbols = {
+            theme = "dropdown",
+          },
+          buffers = {
+            theme = "dropdown",
+          },
+          live_grep = {
+            theme = "dropdown",
           },
         },
       }
 
       require("telescope").load_extension("fzf")
 
+      vim.keymap.set("n", "<leader>o", function()
+        require("telescope.builtin").lsp_dynamic_workspace_symbols()
+      end)
       vim.keymap.set("n", "<leader>F", function()
         require("telescope.builtin").find_files()
       end)
