@@ -14,6 +14,7 @@ vim.opt.showmode = false
 vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.pumheight = 20
 vim.opt.list = true
+vim.opt.undofile = true
 
 -- Keymaps
 vim.g.mapleader = " "
