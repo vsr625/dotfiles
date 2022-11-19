@@ -10,6 +10,7 @@ window:
   startup_mode: Fullscreen
   padding:
     x: 5
+  title: Terminal
 
 key_bindings:
   - { key: Back, mods: Alt, chars: "\u0008" }
