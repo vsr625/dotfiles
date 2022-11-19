@@ -1,0 +1,87 @@
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[buf]
+disabled = true
+
+[c]
+disabled = true
+
+[conda]
+disabled = true
+
+[dart]
+disabled = true
+
+
+[docker_context]
+disabled = true
+
+[elixir]
+disabled = true
+
+[elm]
+disabled = true
+
+[git_branch]
+symbol = " "
+
+[git_status]
+stashed = ""
+
+[golang]
+disabled = true
+
+[haskell]
+disabled = true
+
+[hg_branch]
+disabled = true
+
+[java]
+disabled = true
+
+[julia]
+disabled = true
+
+[lua]
+disabled = true
+
+[memory_usage]
+disabled = true
+
+[meson]
+disabled = true
+
+[nim]
+disabled = true
+
+[nix_shell]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[package]
+disabled = true
+
+[python]
+disabled = true
+
+[rlang]
+disabled = true
+
+[ruby]
+disabled = true
+
+[rust]
+disabled = true
+
+[scala]
+disabled = true
+
+[spack]
+disabled = true
