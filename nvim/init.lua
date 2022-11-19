@@ -165,6 +165,10 @@ require("packer").startup(function(use)
   -- TODO - maybe try different alternative for this
   use {
     "nvim-tree/nvim-tree.lua",
+    requires = {
+      -- Icon support
+      "nvim-tree/nvim-web-devicons",
+    },
     config = function()
       -- Auto close vim if file explorer is the last thing open
       vim.api.nvim_create_autocmd("BufEnter", {
@@ -177,14 +181,11 @@ require("packer").startup(function(use)
       })
 
       require("nvim-tree").setup {
-        renderer = {
-          icons = {
-            show = {
-              file = false,
-              folder = false,
-              folder_arrow = false,
-            },
-          },
+        filters = {
+          dotfiles = true,
+        },
+        update_focused_file = {
+          enable = true,
         },
       }
 
