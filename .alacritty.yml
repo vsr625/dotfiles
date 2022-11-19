@@ -1,0 +1,58 @@
+font:
+  normal:
+    family: BlexMono Nerd Font
+    style: Book
+  size: 14
+  offset:
+    y: 0
+
+window:
+  startup_mode: Fullscreen
+  padding:
+    x: 5
+
+key_bindings:
+  - { key: Back, mods: Alt, chars: "\u0008" }
+
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux attach -t base || tmux new -s base"
+
+colors:
+  # Default colors
+  primary:
+    background: '0x24283b'
+    foreground: '0xc0caf5'
+
+  # Cursor colors
+  cursor:
+    text:   '0x1d202f'
+    cursor: '0xc0caf5'
+
+  # Normal colors
+  normal:
+    black:   '0x1d202f'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xa9b1d6'
+
+  # Bright colors
+  bright:
+    black:   '0x414868'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xc0caf5'
+
+bell:
+  duration: 0
