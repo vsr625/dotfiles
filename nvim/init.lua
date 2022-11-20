@@ -110,6 +110,7 @@ require("packer").startup(function(use)
           icons_enabled = true,
         },
         sections = {
+          lualine_c = { { "filename", file_status = false, path = 1 } },
           lualine_b = { { "branch", icon = "" }, "diagnostics" },
           lualine_x = { "filetype" },
         },
@@ -209,7 +210,9 @@ require("packer").startup(function(use)
   use {
     "Pocco81/auto-save.nvim",
     config = function()
-      require("auto-save").setup {}
+      require("auto-save").setup {
+        execution_message = { message = "" },
+      }
     end,
   }
 
