@@ -96,6 +96,16 @@ require("packer").startup(function(use)
     end,
   }
 
+  -- Fast motion for pro coding
+  use {
+    "phaazon/hop.nvim",
+    branch = "v2",
+    config = function()
+      require("hop").setup { keys = "etovxqpdygfblzhckisuran" }
+      vim.keymap.set({ "n", "v" }, "<leader>m", ":HopChar1<Cr>")
+    end,
+  }
+
   -- Zen mode
   use {
     "folke/zen-mode.nvim",
