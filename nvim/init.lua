@@ -1,3 +1,6 @@
+-- Speed up neovim setup
+require("impatient")
+
 -- Options
 vim.opt.number = true
 vim.opt.numberwidth = 4
@@ -121,6 +124,9 @@ require("packer").startup(function(use)
       require("nvim-autopairs").setup {}
     end,
   }
+
+  -- Speed up neovim - able to notice difference
+  use { "lewis6991/impatient.nvim" }
 
   -- Status line
   use {
