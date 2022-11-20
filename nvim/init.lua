@@ -102,14 +102,15 @@ require("packer").startup(function(use)
   -- Status line
   use {
     "nvim-lualine/lualine.nvim",
+    requires = { "kyazdani42/nvim-web-devicons" },
     config = function()
       require("lualine").setup {
         options = {
           theme = "tokyonight",
-          icons_enabled = false,
+          icons_enabled = true,
         },
         sections = {
-          lualine_b = { "branch", "diagnostics" },
+          lualine_b = { { "branch", icon = "" }, "diagnostics" },
           lualine_x = { "filetype" },
         },
       }
