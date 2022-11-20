@@ -35,6 +35,7 @@ vim.keymap.set("n", "<leader>q", ":q<Cr>")
 vim.keymap.set("n", "<leader>s", ":so %<Cr>")
 vim.keymap.set("n", "<leader>Q", ":q!<Cr>")
 vim.keymap.set("n", "<leader>w", ":w<Cr>")
+vim.keymap.set("n", "<leader>x", ":bdelete<Cr>")
 
 -- Filetype specific config
 vim.api.nvim_create_autocmd("FileType", {
