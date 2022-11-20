@@ -166,7 +166,6 @@ require("packer").startup(function(use)
   }
 
   -- File explorer
-  -- TODO - maybe try different alternative for this
   use {
     "nvim-tree/nvim-tree.lua",
     requires = {
@@ -210,6 +209,17 @@ require("packer").startup(function(use)
     "Pocco81/auto-save.nvim",
     config = function()
       require("auto-save").setup {}
+    end,
+  }
+
+  -- Startup dashboard
+  use {
+    "goolord/alpha-nvim",
+    requires = { "kyazdani42/nvim-web-devicons" },
+    config = function()
+      require("alpha").setup(require("alpha.themes.startify").config)
+
+      vim.keymap.set("n", "<leader>a", ":Alpha<Cr>")
     end,
   }
 
