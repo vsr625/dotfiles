@@ -71,6 +71,11 @@ require("packer").startup(function(use)
     end,
   }
 
+  -- More sleeker colorcolumn
+  use {
+    "xiyaowong/virtcolumn.nvim",
+  }
+
   -- Smooth Scrolling
   use {
     "karb94/neoscroll.nvim",
