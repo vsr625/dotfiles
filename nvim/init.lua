@@ -40,6 +40,23 @@ vim.keymap.set("n", "<leader>Q", ":q!<Cr>")
 vim.keymap.set("n", "<leader>w", ":w<Cr>")
 vim.keymap.set("n", "<leader>x", ":bdelete<Cr>")
 
+-- Retain window position when switching buffers
+vim.api.nvim_create_autocmd("BufWinLeave", {
+  pattern = "*",
+  callback = function()
+    vim.b.winview = vim.fn.winsaveview()
+  end,
+})
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  pattern = "*",
+  callback = function()
+    if vim.b.winview then
+      vim.fn.winrestview(vim.b.winview)
+      vim.b.winview = nil
+    end
+  end,
+})
+
 -- Filetype specific config
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "go",
