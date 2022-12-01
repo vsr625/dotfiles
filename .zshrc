@@ -16,7 +16,7 @@ alias t="tmux attach -t base || tmux new -s base"
 alias sshg="kernel alpha ssh --google-project=rabbit-hole-integration-007"
 alias sshp="kernel alpha ssh --google-project=infrastructure-904"
 
-export GOROOT="$HOME/go/go1.16.15"
+# export GOROOT="$HOME/go/go1.19.2"
 export GOPATH="$HOME"/go
 export GOPRIVATE="*.golabs.io"
 export EDITOR="nvim"
