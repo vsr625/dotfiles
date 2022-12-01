@@ -125,7 +125,7 @@ require("packer").startup(function(use)
     branch = "v2",
     config = function()
       require("hop").setup { keys = "etovxqpdygfblzhckisuran" }
-      vim.keymap.set({ "n", "v" }, "s", ":HopChar1<Cr>")
+      vim.keymap.set({ "n", "v" }, "s", "<cmd>HopChar1<Cr>")
     end,
   }
 
