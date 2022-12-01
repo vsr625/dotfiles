@@ -104,6 +104,9 @@ require("packer").startup(function(use)
       local t = {}
       t["<C-u>"] = { "scroll", { "-vim.wo.scroll", "true", "100" } }
       t["<C-d>"] = { "scroll", { "vim.wo.scroll", "true", "100" } }
+      t["zt"] = { "zt", { "100" } }
+      t["zz"] = { "zz", { "100" } }
+      t["zb"] = { "zb", { "100" } }
       require("neoscroll.config").set_mappings(t)
     end,
   }
@@ -191,6 +194,9 @@ require("packer").startup(function(use)
             theme = "dropdown",
           },
           live_grep = {
+            theme = "dropdown",
+          },
+          lsp_references = {
             theme = "dropdown",
           },
         },
@@ -335,7 +341,9 @@ require("packer").startup(function(use)
       vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
       vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>")
       vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
-      vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>")
+      vim.keymap.set("n", "gr", function()
+        require("telescope.builtin").lsp_references()
+      end)
     end,
   }
 
@@ -453,6 +461,9 @@ require("packer").startup(function(use)
         filetype = {
           lua = {
             require("formatter.filetypes.lua").stylua,
+          },
+          json = {
+            require("formatter.filetypes.json").jq,
           },
         },
       }
