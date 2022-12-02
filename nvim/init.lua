@@ -18,6 +18,7 @@ vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.pumheight = 20
 vim.opt.list = true
 vim.opt.undofile = true
+vim.opt.guicursor:append("a:blinkon1")
 
 -- Keymaps
 vim.g.mapleader = " "
