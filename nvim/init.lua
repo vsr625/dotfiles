@@ -42,6 +42,14 @@ vim.keymap.set("n", "<leader>Q", ":q!<Cr>")
 vim.keymap.set("n", "<leader>w", ":w<Cr>")
 vim.keymap.set("n", "<leader>x", ":bdelete<Cr>")
 
+-- Highlight yanked text
+vim.api.nvim_create_autocmd("TextYankPost", {
+  pattern = "*",
+  callback = function()
+    vim.highlight.on_yank { higroup = "IncSearch", timeout = 100 }
+  end,
+})
+
 -- Auto reload file if there were any changes
 vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
   pattern = "*",
