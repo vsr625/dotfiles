@@ -19,6 +19,7 @@ vim.opt.pumheight = 20
 vim.opt.list = true
 vim.opt.undofile = true
 vim.opt.guicursor:append("a:blinkon1")
+vim.opt.autoread = true
 
 -- Keymaps
 vim.g.mapleader = " "
@@ -40,6 +41,16 @@ vim.keymap.set("n", "<leader>s", ":so %<Cr>")
 vim.keymap.set("n", "<leader>Q", ":q!<Cr>")
 vim.keymap.set("n", "<leader>w", ":w<Cr>")
 vim.keymap.set("n", "<leader>x", ":bdelete<Cr>")
+
+-- Auto reload file if there were any changes
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+  pattern = "*",
+  callback = function()
+    if vim.fn.mode() ~= "c" then
+      vim.cmd("checktime")
+    end
+  end,
+})
 
 -- Retain window position when switching buffers
 vim.api.nvim_create_autocmd("BufWinLeave", {
