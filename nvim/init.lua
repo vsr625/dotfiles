@@ -137,6 +137,16 @@ require("packer").startup(function(use)
     end,
   }
 
+  -- Change cut and delete vim functionality
+  use {
+    "gbprod/cutlass.nvim",
+    config = function()
+      require("cutlass").setup {
+        cut_key = "x",
+      }
+    end,
+  }
+
   -- Auto brace closer
   use {
     "windwp/nvim-autopairs",
@@ -464,4 +474,5 @@ require("packer").startup(function(use)
       vim.keymap.set("n", "<leader>f", ":Format<Cr>")
     end,
   }
+
 end)
