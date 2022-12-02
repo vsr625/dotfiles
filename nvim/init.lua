@@ -337,6 +337,24 @@ require("packer").startup(function(use)
     end,
   }
 
+  -- Additional text objects
+  use {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    config = function()
+      require("nvim-treesitter.configs").setup {
+        textobjects = {
+          select = {
+            enable = true,
+            keymaps = {
+              ["aa"] = "@parameter.outer",
+              ["ia"] = "@parameter.inner",
+            },
+          },
+        },
+      }
+    end,
+  }
+
   -- LSP Config
   use {
     "neovim/nvim-lspconfig",
