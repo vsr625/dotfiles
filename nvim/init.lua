@@ -522,4 +522,13 @@ require("packer").startup(function(use)
     end,
   }
 
+  -- Highlight word under cursor intelligently
+  use {
+    "RRethy/vim-illuminate",
+    config = function()
+      require("illuminate").configure {
+        delay = 0,
+      }
+    end,
+  }
 end)
