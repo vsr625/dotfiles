@@ -162,7 +162,8 @@ require("packer").startup(function(use)
     "gbprod/cutlass.nvim",
     config = function()
       require("cutlass").setup {
-        cut_key = "x",
+        -- Don't modify the behaviour of 'd'
+        exclude = { "nd", "xd" },
       }
     end,
   }
