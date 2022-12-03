@@ -507,6 +507,14 @@ require("packer").startup(function(use)
           json = {
             require("formatter.filetypes.json").jq,
           },
+          go = {
+            function()
+              return {
+                exe = "goimports | gofmt",
+                stdin = true,
+              }
+            end,
+          },
         },
       }
 
