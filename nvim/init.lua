@@ -34,13 +34,19 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 
 vim.keymap.set("v", "<leader>y", '"+y')
-vim.keymap.set("n", "<leader>h", ":nohl<Cr>")
 vim.keymap.set("n", "<leader>e", ":Explore<Cr>")
 vim.keymap.set("n", "<leader>q", ":q<Cr>")
 vim.keymap.set("n", "<leader>s", ":so %<Cr>")
 vim.keymap.set("n", "<leader>Q", ":q!<Cr>")
 vim.keymap.set("n", "<leader>w", ":w<Cr>")
 vim.keymap.set("n", "<leader>x", ":bdelete<Cr>")
+
+-- Smart disabling of hlsearch - very neat!
+vim.on_key(function(char)
+  if vim.fn.mode() == "n" then
+    vim.opt.hlsearch = vim.tbl_contains({ "<CR>", "n", "N", "*", "#", "?", "/" }, vim.fn.keytrans(char))
+  end
+end, vim.api.nvim_create_namespace("auto_hlsearch"))
 
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
