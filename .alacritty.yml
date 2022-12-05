@@ -1,7 +1,7 @@
 font:
   normal:
-    family: BlexMono Nerd Font
-    style: Book
+    family: FuraMono Nerd Font
+    style: Regular
   size: 14
   offset:
     y: 0
