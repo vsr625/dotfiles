@@ -20,6 +20,7 @@ vim.opt.list = true
 vim.opt.undofile = true
 vim.opt.guicursor:append("a:blinkon1")
 vim.opt.autoread = true
+vim.opt.scrolloff = 10
 
 -- Keymaps
 vim.g.mapleader = " "
@@ -529,6 +530,9 @@ require("packer").startup(function(use)
     config = function()
       require("illuminate").configure {
         delay = 0,
+        filetypes_denylist = {
+          "NvimTree",
+        },
       }
     end,
   }
