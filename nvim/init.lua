@@ -101,9 +101,9 @@ require("packer").startup(function(use)
 
   -- Colorscheme
   use {
-    "folke/tokyonight.nvim",
+    "sainnhe/gruvbox-material",
     config = function()
-      vim.cmd("colorscheme tokyonight-storm")
+      vim.cmd("colorscheme gruvbox-material")
     end,
   }
 
@@ -192,7 +192,7 @@ require("packer").startup(function(use)
     config = function()
       require("lualine").setup {
         options = {
-          theme = "tokyonight",
+          theme = "gruvbox-material",
           icons_enabled = true,
         },
         sections = {
