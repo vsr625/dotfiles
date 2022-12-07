@@ -5,6 +5,9 @@ plugins=(git z per-directory-history zsh-autosuggestions zsh-syntax-highlighting
 
 export _Z_CMD="c"
 
+DISABLE_AUTO_UPDATE=true
+DISABLE_MAGIC_FUNCTIONS=true
+
 source $ZSH/oh-my-zsh.sh
 
 
