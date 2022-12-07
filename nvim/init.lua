@@ -40,7 +40,6 @@ vim.keymap.set("n", "<leader>q", ":q<Cr>")
 vim.keymap.set("n", "<leader>s", ":so %<Cr>")
 vim.keymap.set("n", "<leader>Q", ":q!<Cr>")
 vim.keymap.set("n", "<leader>w", ":w<Cr>")
-vim.keymap.set("n", "<leader>x", ":bdelete<Cr>")
 
 -- Smart disabling of hlsearch - very neat!
 vim.on_key(function(char)
@@ -249,6 +248,14 @@ require("packer").startup(function(use)
       vim.keymap.set("n", "<leader>b", function()
         require("telescope.builtin").buffers()
       end)
+    end,
+  }
+
+  -- buffer-deletes without ruining window layouts
+  use {
+    "famiu/bufdelete.nvim",
+    config = function()
+      vim.keymap.set("n", "<leader>x", ":Bdelete<Cr>")
     end,
   }
 
