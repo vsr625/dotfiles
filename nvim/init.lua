@@ -28,6 +28,7 @@ vim.keymap.set({ "n", "v" }, "ga", "0")
 vim.keymap.set({ "n", "v" }, "gl", "$")
 vim.keymap.set("i", "<C-h>", "<C-w>")
 vim.keymap.set("n", "U", "<C-r>")
+vim.keymap.set({ "n", "v" }, "s", "<cmd>HopChar1<Cr>")
 
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "<C-h>", "<C-w>h")
@@ -35,12 +36,28 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 
 vim.keymap.set("v", "<leader>y", '"+y')
-vim.keymap.set("n", "<leader>e", ":Explore<Cr>")
-vim.keymap.set("n", "<leader>q", ":q<Cr>")
 vim.keymap.set("n", "<leader>s", ":so %<Cr>")
+vim.keymap.set("n", "<leader>q", ":q<Cr>")
 vim.keymap.set("n", "<leader>Q", ":q!<Cr>")
-vim.keymap.set("n", "<leader>w", ":w<Cr>")
+vim.keymap.set("n", "<leader>x", ":Bdelete<Cr>")
 
+vim.keymap.set("n", "<leader>A", ":Alpha<Cr>")
+vim.keymap.set("n", "<leader>b", "<cmd>lua require('telescope.builtin').buffers()<cr>")
+vim.keymap.set("n", "<leader>o", "<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>")
+vim.keymap.set("n", "<leader>O", "<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>")
+vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<Cr>")
+vim.keymap.set("n", "<leader>g", ":LazyGit<Cr>")
+vim.keymap.set("n", "<leader>G", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
+vim.keymap.set("n", "<leader>f", ":Format<Cr>")
+vim.keymap.set("n", "<leader>F", "<cmd>lua require('telescope.builtin').find_files()<cr>")
+
+vim.keymap.set("n", "gi", "<cmd>lua require('telescope.builtin').lsp_implementations()<cr>")
+vim.keymap.set("n", "gr", "<cmd>lua require('telescope.builtin').lsp_references()<cr>")
+vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>")
+vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
+vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
+
+-- Autocmds
 -- Smart disabling of hlsearch - very neat!
 vim.on_key(function(char)
   if vim.fn.mode() == "n" then
@@ -73,6 +90,7 @@ vim.api.nvim_create_autocmd("BufWinLeave", {
     vim.b.winview = vim.fn.winsaveview()
   end,
 })
+
 vim.api.nvim_create_autocmd("BufWinEnter", {
   pattern = "*",
   callback = function()
@@ -107,7 +125,7 @@ require("packer").startup(function(use)
     end,
   }
 
-  -- Scroll bar like in IDE
+  -- Scroll bar thingy
   use {
     "lewis6991/satellite.nvim",
     config = function()
@@ -146,7 +164,9 @@ require("packer").startup(function(use)
   use {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
-      require("indent_blankline").setup {}
+      require("indent_blankline").setup {
+        show_current_context = true,
+      }
     end,
   }
 
@@ -156,7 +176,6 @@ require("packer").startup(function(use)
     branch = "v2",
     config = function()
       require("hop").setup { keys = "etovxqpdygfblzhckisuran" }
-      vim.keymap.set({ "n", "v" }, "s", "<cmd>HopChar1<Cr>")
     end,
   }
 
@@ -203,7 +222,7 @@ require("packer").startup(function(use)
         sections = {
           lualine_c = { { "filename", file_status = false, path = 1 } },
           lualine_b = { { "branch", icon = "" }, "diagnostics" },
-          lualine_x = { "filetype" },
+          lualine_x = {},
         },
       }
     end,
@@ -232,6 +251,12 @@ require("packer").startup(function(use)
           lsp_dynamic_workspace_symbols = {
             theme = "dropdown",
           },
+          lsp_document_symbols = {
+            theme = "dropdown",
+          },
+          lsp_implementations = {
+            theme = "dropdown",
+          },
           buffers = {
             theme = "dropdown",
           },
@@ -245,37 +270,18 @@ require("packer").startup(function(use)
       }
 
       require("telescope").load_extension("fzf")
-
-      vim.keymap.set("n", "<leader>o", function()
-        require("telescope.builtin").lsp_dynamic_workspace_symbols()
-      end)
-      vim.keymap.set("n", "<leader>F", function()
-        require("telescope.builtin").find_files()
-      end)
-      vim.keymap.set("n", "<leader>G", function()
-        require("telescope.builtin").live_grep()
-      end)
-      vim.keymap.set("n", "<leader>b", function()
-        require("telescope.builtin").buffers()
-      end)
     end,
   }
 
   -- buffer-deletes without ruining window layouts
   use {
     "famiu/bufdelete.nvim",
-    config = function()
-      vim.keymap.set("n", "<leader>x", ":Bdelete<Cr>")
-    end,
   }
 
   -- File explorer
   use {
     "nvim-tree/nvim-tree.lua",
-    requires = {
-      -- Icon support
-      "nvim-tree/nvim-web-devicons",
-    },
+    requires = { "nvim-tree/nvim-web-devicons" },
     config = function()
       -- Auto close vim if file explorer is the last thing open
       vim.api.nvim_create_autocmd("BufEnter", {
@@ -295,17 +301,12 @@ require("packer").startup(function(use)
           enable = true,
         },
       }
-
-      vim.keymap.set("n", "<leader>T", ":NvimTreeToggle<Cr>")
     end,
   }
 
   -- Git integration
   use {
     "kdheepak/lazygit.nvim",
-    config = function()
-      vim.keymap.set("n", "<leader>g", ":LazyGit<Cr>")
-    end,
   }
 
   -- Auto save files - so you don't have to
@@ -324,8 +325,6 @@ require("packer").startup(function(use)
     requires = { "kyazdani42/nvim-web-devicons" },
     config = function()
       require("alpha").setup(require("alpha.themes.startify").config)
-
-      vim.keymap.set("n", "<leader>a", ":Alpha<Cr>")
     end,
   }
 
@@ -403,15 +402,6 @@ require("packer").startup(function(use)
       require("lspconfig").gopls.setup {
         capabilities = capabilities,
       }
-
-      vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>")
-      vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
-      vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
-      vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>")
-      vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
-      vim.keymap.set("n", "gr", function()
-        require("telescope.builtin").lsp_references()
-      end)
     end,
   }
 
@@ -536,8 +526,6 @@ require("packer").startup(function(use)
           },
         },
       }
-
-      vim.keymap.set("n", "<leader>f", ":Format<Cr>")
     end,
   }
 
