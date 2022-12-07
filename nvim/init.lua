@@ -401,6 +401,13 @@ require("packer").startup(function(use)
 
       require("lspconfig").gopls.setup {
         capabilities = capabilities,
+        -- settings = {
+        --   gopls = {
+        --     hints = {
+        --       parameterNames = true,
+        --     },
+        --   },
+        -- },
       }
     end,
   }
@@ -542,4 +549,15 @@ require("packer").startup(function(use)
     end,
   }
 
+  -- Golang
+  -- TODOs
+  -- 1. Make search UI nicer and more intuitive
+  -- 2. Run Go tests and figure out some bindings
+  use {
+    "ray-x/go.nvim",
+    requires = { "ray-x/guihua.lua" },
+    config = function()
+      require("go").setup {}
+    end,
+  }
 end)
