@@ -107,13 +107,23 @@ require("packer").startup(function(use)
     end,
   }
 
+  -- Scroll bar like in IDE
+  use {
+    "lewis6991/satellite.nvim",
+    config = function()
+      require("satellite").setup {
+        excluded_filetypes = {
+          "NvimTree",
+        },
+      }
+    end,
+  }
+
   -- Git signs
   use {
     "lewis6991/gitsigns.nvim",
     config = function()
-      require("gitsigns").setup {
-        numhl = true,
-      }
+      require("gitsigns").setup {}
     end,
   }
 
