@@ -21,6 +21,7 @@ vim.opt.undofile = true
 vim.opt.guicursor:append("a:blinkon1")
 vim.opt.autoread = true
 vim.opt.scrolloff = 10
+vim.opt.listchars:append { tab = "  " }
 
 -- Keymaps
 vim.g.mapleader = " "
@@ -164,6 +165,8 @@ require("packer").startup(function(use)
     "lukas-reineke/indent-blankline.nvim",
     config = function()
       require("indent_blankline").setup {
+        show_trailing_blankline_indent = false,
+        show_first_indent_level = false,
         show_current_context = true,
       }
     end,
@@ -221,7 +224,7 @@ require("packer").startup(function(use)
         sections = {
           lualine_c = { { "filename", file_status = false, path = 1 } },
           lualine_b = { { "branch", icon = "" }, "diagnostics" },
-          lualine_x = {},
+          lualine_x = { "filetype" },
         },
       }
     end,
