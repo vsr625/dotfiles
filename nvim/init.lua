@@ -4,8 +4,8 @@ require("impatient")
 -- Options
 vim.opt.number = true
 vim.opt.numberwidth = 4
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
 vim.opt.colorcolumn = "100"
@@ -101,15 +101,6 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
   end,
 })
 
--- Filetype specific config
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "go",
-  callback = function()
-    vim.opt_local.tabstop = 4
-    vim.opt_local.shiftwidth = 4
-  end,
-})
-
 -- Plugins
 require("packer").startup(function(use)
   -- Packer can manage itself
@@ -134,6 +125,14 @@ require("packer").startup(function(use)
           "NvimTree",
         },
       }
+    end,
+  }
+
+  -- Auto detect indentations
+  use {
+    "nmac427/guess-indent.nvim",
+    config = function()
+      require("guess-indent").setup {}
     end,
   }
 
