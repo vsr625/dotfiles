@@ -16,8 +16,6 @@ alias v="nvim"
 alias vim="nvim"
 alias e="exit"
 alias t="tmux attach -t base || tmux new -s base"
-alias sshg="kernel ssh --google-project=rabbit-hole-integration-007"
-alias sshp="kernel ssh --google-project=infrastructure-904"
 
 # export GOROOT="$HOME/go/go1.19.2"
 export GOPATH="$HOME"/go
