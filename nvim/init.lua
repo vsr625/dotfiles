@@ -177,7 +177,7 @@ require("packer").startup(function(use)
     "phaazon/hop.nvim",
     branch = "v2",
     config = function()
-      require("hop").setup { keys = "etovxqpdygfblzhckisuran" }
+      require("hop").setup {}
     end,
   }
 
@@ -546,6 +546,7 @@ require("packer").startup(function(use)
         delay = 0,
         filetypes_denylist = {
           "NvimTree",
+          "TelescopePrompt",
         },
       }
     end,
