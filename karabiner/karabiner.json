@@ -69,7 +69,7 @@
                         ]
                     },
                     {
-                        "description": "shift+caps_lock->caps_lock; caps_lock+[...keys] -> control+[..keys]; caps_lock -> escape",
+                        "description": "caps_lock+[...keys] -> control+[..keys]; caps_lock -> escape",
                         "manipulators": [
                             {
                                 "from": {

@@ -22,6 +22,7 @@ vim.opt.guicursor:append("a:blinkon1")
 vim.opt.autoread = true
 vim.opt.scrolloff = 10
 vim.opt.listchars:append { tab = "  " }
+vim.opt.fixeol = false
 
 -- Keymaps
 vim.g.mapleader = " "
