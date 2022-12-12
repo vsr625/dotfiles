@@ -1,5 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 
 plugins=(git z per-directory-history zsh-autosuggestions zsh-syntax-highlighting)
 
@@ -9,7 +9,6 @@ DISABLE_AUTO_UPDATE=true
 DISABLE_MAGIC_FUNCTIONS=true
 
 source $ZSH/oh-my-zsh.sh
-
 
 # Custom Configuration
 alias v="nvim"

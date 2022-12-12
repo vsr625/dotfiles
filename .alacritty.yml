@@ -12,7 +12,7 @@ font:
 window:
   startup_mode: Fullscreen
   padding:
-    x: 5
+    x: 3
   title: Terminal
 
 key_bindings:

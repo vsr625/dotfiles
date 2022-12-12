@@ -245,6 +245,9 @@ require("packer").startup(function(use)
               ["<C-k>"] = require("telescope.actions").move_selection_previous,
               ["<C-h>"] = { "<c-s-w>", type = "command" },
             },
+            n = {
+              ["x"] = require("telescope.actions").delete_buffer,
+            },
           },
         },
         pickers = {
@@ -302,6 +305,9 @@ require("packer").startup(function(use)
         },
         update_focused_file = {
           enable = true,
+        },
+        view = {
+          width = 40,
         },
       }
     end,
