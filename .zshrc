@@ -11,8 +11,9 @@ DISABLE_MAGIC_FUNCTIONS=true
 source $ZSH/oh-my-zsh.sh
 
 # Custom Configuration
-alias v="nvim"
-alias vim="nvim"
+DOTFILES_HOME=~/personal/dotfiles
+alias v="XDG_CONFIG_HOME=$DOTFILES_HOME nvim"
+alias vim="XDG_CONFIG_HOME=$DOTFILES_HOME nvim"
 alias e="exit"
 alias t="tmux attach -t base || tmux new -s base"
 
