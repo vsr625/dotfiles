@@ -383,6 +383,14 @@ require("packer").startup(function(use)
     end,
   }
 
+  -- Handy LSP information!
+  use {
+    "j-hui/fidget.nvim",
+    config = function()
+      require("fidget").setup {}
+    end,
+  }
+
   -- LSP Config
   use {
     "neovim/nvim-lspconfig",
