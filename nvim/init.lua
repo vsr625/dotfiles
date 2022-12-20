@@ -303,8 +303,18 @@ require("packer").startup(function(use)
         filters = {
           dotfiles = true,
         },
+        -- Switch to go/pkg/mod while browsing libraries
+        root_dirs = { "~/go/pkg/mod", "/opt/homebrew/Cellar/go/1.19.3/libexec/src" },
         update_focused_file = {
           enable = true,
+          -- Switch to go/pkg/mod while browsing libraries
+          update_root = true,
+        },
+        actions = {
+          change_dir = {
+            -- Don't change directories when switching between files
+            enable = false,
+          },
         },
         view = {
           width = 40,
