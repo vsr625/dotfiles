@@ -120,6 +120,17 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
   group = config_group,
 })
 
+-- Auto close vim if file explorer is the last thing open
+vim.api.nvim_create_autocmd("BufEnter", {
+  nested = true,
+  callback = function()
+    if #vim.api.nvim_list_wins() == 1 and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil then
+      vim.cmd.quit()
+    end
+  end,
+  group = config_group,
+})
+
 -- Plugins
 require("packer").startup(function(use)
   -- Packer can manage itself
@@ -312,22 +323,19 @@ require("packer").startup(function(use)
     "nvim-tree/nvim-tree.lua",
     requires = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      -- Auto close vim if file explorer is the last thing open
-      vim.api.nvim_create_autocmd("BufEnter", {
-        nested = true,
-        callback = function()
-          if #vim.api.nvim_list_wins() == 1 and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil then
-            vim.cmd("quit")
-          end
-        end,
-      })
-
       require("nvim-tree").setup {
         filters = {
-          dotfiles = true,
+          -- Don't show .git directory in the tree
+          custom = { "^\\.git" },
+        },
+        -- Show diagnostic errors in the tree
+        diagnostics = {
+          enable = true,
+          show_on_dirs = false,
         },
         -- Switch to go/pkg/mod while browsing libraries
         root_dirs = { "~/go/pkg/mod", "/opt/homebrew/Cellar/go/1.19.3/libexec/src" },
+        -- Focus on the opened file in the tree
         update_focused_file = {
           enable = true,
           -- Switch to go/pkg/mod while browsing libraries
