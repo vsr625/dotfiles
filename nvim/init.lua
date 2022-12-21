@@ -20,7 +20,7 @@ vim.opt.list = true
 vim.opt.undofile = true
 vim.opt.guicursor:append("a:blinkon1")
 vim.opt.autoread = true
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 8
 vim.opt.listchars:append { tab = "  " }
 vim.opt.fixeol = false
 
