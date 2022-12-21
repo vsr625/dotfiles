@@ -37,15 +37,15 @@ vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 
-local function cmd_bang(command)
+local function bang_it(vim_cmd)
   return function()
-    vim.cmd { cmd = command, bang = true }
+    vim_cmd { bang = true }
   end
 end
 
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
-vim.keymap.set("n", "<leader>Q", cmd_bang("q"))
+vim.keymap.set("n", "<leader>Q", bang_it(vim.cmd.q))
 vim.keymap.set("n", "<leader>x", vim.cmd.Bdelete)
 vim.keymap.set("n", "<leader>A", vim.cmd.Alpha)
 vim.keymap.set("n", "<leader>b", require("telescope.builtin").buffers)
