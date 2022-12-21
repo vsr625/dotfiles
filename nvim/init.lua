@@ -26,8 +26,8 @@ vim.opt.fixeol = false
 
 -- Keymaps
 vim.g.mapleader = " "
-vim.keymap.set({ "n", "v" }, "ga", "0")
-vim.keymap.set({ "n", "v" }, "gl", "$")
+vim.keymap.set({ "n", "v", "o" }, "ga", "0")
+vim.keymap.set({ "n", "v", "o" }, "gl", "$")
 vim.keymap.set("i", "<C-h>", "<C-w>")
 vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set({ "n", "v" }, "s", vim.cmd.HopChar1)
