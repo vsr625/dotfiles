@@ -38,7 +38,6 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 
 vim.keymap.set("v", "<leader>y", '"+y')
-vim.keymap.set("n", "<leader>s", ":so %<Cr>")
 vim.keymap.set("n", "<leader>q", ":q<Cr>")
 vim.keymap.set("n", "<leader>Q", ":q!<Cr>")
 vim.keymap.set("n", "<leader>x", ":Bdelete<Cr>")
@@ -67,12 +66,21 @@ vim.on_key(function(char)
   end
 end, vim.api.nvim_create_namespace("auto_hlsearch"))
 
+-- Automatically source/PackerCompile in case of any updates to init.lua
+local config_group = vim.api.nvim_create_augroup("config", {})
+vim.api.nvim_create_autocmd("BufWritePost", {
+  command = "source <afile> | PackerCompile",
+  pattern = vim.fn.expand("$MYVIMRC"),
+  group = config_group,
+})
+
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
   callback = function()
     vim.highlight.on_yank { higroup = "IncSearch", timeout = 100 }
   end,
+  group = config_group,
 })
 
 -- Auto reload file if there were any changes
@@ -83,6 +91,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGai
       vim.cmd("checktime")
     end
   end,
+  group = config_group,
 })
 
 -- Retain window position when switching buffers
@@ -91,6 +100,7 @@ vim.api.nvim_create_autocmd("BufWinLeave", {
   callback = function()
     vim.b.winview = vim.fn.winsaveview()
   end,
+  group = config_group,
 })
 
 vim.api.nvim_create_autocmd("BufWinEnter", {
@@ -101,6 +111,7 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
       vim.b.winview = nil
     end
   end,
+  group = config_group,
 })
 
 -- Plugins
@@ -244,6 +255,7 @@ require("packer").startup(function(use)
               ["<C-j>"] = require("telescope.actions").move_selection_next,
               ["<C-k>"] = require("telescope.actions").move_selection_previous,
               ["<C-h>"] = { "<c-s-w>", type = "command" },
+              ["<C-d>"] = require("telescope.actions").delete_buffer,
             },
             n = {
               ["x"] = require("telescope.actions").delete_buffer,
