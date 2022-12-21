@@ -30,33 +30,36 @@ vim.keymap.set({ "n", "v" }, "ga", "0")
 vim.keymap.set({ "n", "v" }, "gl", "$")
 vim.keymap.set("i", "<C-h>", "<C-w>")
 vim.keymap.set("n", "U", "<C-r>")
-vim.keymap.set({ "n", "v" }, "s", "<cmd>HopChar1<Cr>")
+vim.keymap.set({ "n", "v" }, "s", vim.cmd.HopChar1)
 
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 
+local function cmd_bang(command)
+  return function()
+    vim.cmd { cmd = command, bang = true }
+  end
+end
+
 vim.keymap.set("v", "<leader>y", '"+y')
-vim.keymap.set("n", "<leader>q", ":q<Cr>")
-vim.keymap.set("n", "<leader>Q", ":q!<Cr>")
-vim.keymap.set("n", "<leader>x", ":Bdelete<Cr>")
-
-vim.keymap.set("n", "<leader>A", ":Alpha<Cr>")
-vim.keymap.set("n", "<leader>b", "<cmd>lua require('telescope.builtin').buffers()<cr>")
-vim.keymap.set("n", "<leader>o", "<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>")
-vim.keymap.set("n", "<leader>O", "<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>")
-vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<Cr>")
-vim.keymap.set("n", "<leader>g", ":LazyGit<Cr>")
-vim.keymap.set("n", "<leader>G", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
-vim.keymap.set("n", "<leader>f", ":Format<Cr>")
-vim.keymap.set("n", "<leader>F", "<cmd>lua require('telescope.builtin').find_files()<cr>")
-
-vim.keymap.set("n", "gi", "<cmd>lua require('telescope.builtin').lsp_implementations()<cr>")
-vim.keymap.set("n", "gr", "<cmd>lua require('telescope.builtin').lsp_references()<cr>")
-vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>")
-vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
-vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
+vim.keymap.set("n", "<leader>q", vim.cmd.q)
+vim.keymap.set("n", "<leader>Q", cmd_bang("q"))
+vim.keymap.set("n", "<leader>x", vim.cmd.Bdelete)
+vim.keymap.set("n", "<leader>A", vim.cmd.Alpha)
+vim.keymap.set("n", "<leader>b", require("telescope.builtin").buffers)
+vim.keymap.set("n", "<leader>o", require("telescope.builtin").lsp_dynamic_workspace_symbols)
+vim.keymap.set("n", "<leader>O", require("telescope.builtin").lsp_document_symbols)
+vim.keymap.set("n", "<leader>t", vim.cmd.NvimTreeToggle)
+vim.keymap.set("n", "<leader>g", vim.cmd.LazyGit)
+vim.keymap.set("n", "<leader>G", require("telescope.builtin").live_grep)
+vim.keymap.set("n", "<leader>f", vim.cmd.Format)
+vim.keymap.set("n", "<leader>F", require("telescope.builtin").find_files)
+vim.keymap.set("n", "gi", require("telescope.builtin").lsp_implementations)
+vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references)
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+vim.keymap.set("n", "K", vim.lsp.buf.hover)
 
 -- Autocmds
 -- Smart disabling of hlsearch - very neat!
@@ -274,15 +277,20 @@ require("packer").startup(function(use)
           },
           lsp_implementations = {
             theme = "dropdown",
+            show_line = false,
           },
           buffers = {
             theme = "dropdown",
+            only_cwd = true,
+            sort_lastused = true,
+            ignore_current_buffer = true,
           },
           live_grep = {
             theme = "dropdown",
           },
           lsp_references = {
             theme = "dropdown",
+            show_line = false,
           },
         },
       }
