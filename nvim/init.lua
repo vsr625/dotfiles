@@ -131,6 +131,12 @@ vim.api.nvim_create_autocmd("BufEnter", {
   group = config_group,
 })
 
+require("packer").init {
+  -- Manually specify the plugin snapshot to use
+  snapshot_path = vim.fn.getenv("HOME") .. "/personal/dotfiles/nvim/plugin",
+  snapshot = "snapshot",
+}
+
 -- Plugins
 require("packer").startup(function(use)
   -- Packer can manage itself
