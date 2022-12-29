@@ -584,6 +584,9 @@ require("packer").startup(function(use)
           lua = {
             require("formatter.filetypes.lua").stylua,
           },
+          toml = {
+            require("formatter.filetypes.toml").taplo,
+          },
           json = {
             require("formatter.filetypes.json").jq,
           },
