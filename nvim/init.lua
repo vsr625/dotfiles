@@ -332,7 +332,7 @@ require("packer").startup(function(use)
       require("nvim-tree").setup {
         filters = {
           -- Don't show .git directory in the tree
-          custom = { "^\\.git" },
+          custom = { "^\\.git$" },
         },
         -- Show diagnostic errors in the tree
         diagnostics = {
