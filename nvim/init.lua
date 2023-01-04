@@ -465,13 +465,16 @@ require("packer").startup(function(use)
 
       require("lspconfig").gopls.setup {
         capabilities = capabilities,
-        -- settings = {
-        --   gopls = {
-        --     hints = {
-        --       parameterNames = true,
-        --     },
-        --   },
-        -- },
+        settings = {
+          gopls = {
+            analyses = {
+              composites = false,
+            },
+            -- hints = {
+            --   parameterNames = true,
+            -- },
+          },
+        },
       }
     end,
   }
@@ -593,7 +596,7 @@ require("packer").startup(function(use)
           go = {
             function()
               return {
-                exe = "goimports | gofmt",
+                exe = "gofmt",
                 stdin = true,
               }
             end,
