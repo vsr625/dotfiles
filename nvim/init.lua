@@ -72,11 +72,11 @@ end, vim.api.nvim_create_namespace("auto_hlsearch"))
 -- Automatically source in case of any updates to init.lua
 local config_group = vim.api.nvim_create_augroup("config", {})
 vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = vim.fn.getenv("HOME") .. "/personal/dotfiles/nvim/init.lua",
   callback = function(opts)
     vim.cmd.source { opts.file }
     vim.cmd.GuessIndent()
   end,
-  pattern = vim.fn.expand("$MYVIMRC"),
   group = config_group,
 })
 
