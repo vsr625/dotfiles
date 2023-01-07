@@ -273,6 +273,7 @@ require("packer").startup(function(use)
     config = function()
       require("telescope").setup {
         defaults = {
+          file_ignore_patterns = { ".git/", ".idea/" },
           mappings = {
             i = {
               ["<C-j>"] = require("telescope.actions").move_selection_next,
@@ -288,6 +289,7 @@ require("packer").startup(function(use)
         pickers = {
           find_files = {
             theme = "dropdown",
+            hidden = true,
           },
           lsp_dynamic_workspace_symbols = {
             theme = "dropdown",
@@ -298,6 +300,7 @@ require("packer").startup(function(use)
           lsp_implementations = {
             theme = "dropdown",
             show_line = false,
+            default_text = "!mock",
           },
           buffers = {
             theme = "dropdown",
@@ -311,6 +314,7 @@ require("packer").startup(function(use)
           lsp_references = {
             theme = "dropdown",
             show_line = false,
+            default_text = "!factory !test",
           },
         },
       }
@@ -332,7 +336,7 @@ require("packer").startup(function(use)
       require("nvim-tree").setup {
         filters = {
           -- Don't show .git directory in the tree
-          custom = { "^\\.git$" },
+          custom = { "^\\.git$", "^\\.idea$" },
         },
         -- Show diagnostic errors in the tree
         diagnostics = {
