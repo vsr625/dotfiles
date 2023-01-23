@@ -148,6 +148,7 @@ require("packer").startup(function(use)
   use {
     "sainnhe/gruvbox-material",
     config = function()
+      vim.g.gruvbox_material_background = "hard"
       vim.cmd("colorscheme gruvbox-material")
     end,
   }
@@ -474,9 +475,6 @@ require("packer").startup(function(use)
             analyses = {
               composites = false,
             },
-            -- hints = {
-            --   parameterNames = true,
-            -- },
           },
         },
       }

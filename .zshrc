@@ -12,6 +12,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Custom Configuration
 alias v="nvim"
+alias lg="lazygit"
 alias vim="nvim"
 alias e="exit"
 alias t="tmux attach -t base || tmux new -s base"
