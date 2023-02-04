@@ -131,12 +131,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
   group = config_group,
 })
 
-require("packer").init {
-  -- Manually specify the plugin snapshot to use
-  snapshot_path = vim.fn.getenv("HOME") .. "/personal/dotfiles/nvim/plugin",
-  snapshot = "snapshot",
-}
-
 -- Plugins
 require("packer").startup(function(use)
   -- Packer can manage itself
@@ -547,7 +541,7 @@ require("packer").startup(function(use)
         mapping = {
           ["<Up>"] = cmp.mapping.select_prev_item(select_opts),
           ["<Down>"] = cmp.mapping.select_next_item(select_opts),
-          ["<CR>"] = cmp.mapping.confirm { select = true },
+          ["<CR>"] = cmp.mapping.confirm { select = true, behavior = cmp.ConfirmBehavior.Insert },
           ["<Tab>"] = cmp.mapping(function(fallback)
             local col = vim.fn.col(".") - 1
 
@@ -623,9 +617,6 @@ require("packer").startup(function(use)
   }
 
   -- Golang
-  -- TODOs
-  -- 1. Make search UI nicer and more intuitive
-  -- 2. Run Go tests and figure out some bindings
   use {
     "ray-x/go.nvim",
     requires = { "ray-x/guihua.lua" },
