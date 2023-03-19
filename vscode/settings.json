@@ -159,6 +159,6 @@
   "go.testExplorer.packageDisplayMode": "nested",
   "explorer.confirmDragAndDrop": false,
   "window.newWindowDimensions": "fullscreen",
-  "window.openFoldersInNewWindow": "on",
   "window.restoreFullscreen": true,
+  "window.restoreWindows": "none",
 }
