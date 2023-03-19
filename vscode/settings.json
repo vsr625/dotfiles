@@ -1,0 +1,164 @@
+{
+  "editor.fontFamily": "FuraMono Nerd Font Mono",
+  "editor.fontSize": 13.5,
+  "files.autoSave": "onFocusChange",
+  "editor.smoothScrolling": true,
+  "editor.minimap.enabled": false,
+  "workbench.startupEditor": "none",
+  "breadcrumbs.enabled": false,
+  "vim.easymotion": true,
+  "vim.easymotionKeys": "hklyuiopnmqwertzxcvbasdgjf",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "g",
+        "i"
+      ],
+      "commands": [
+        "editor.action.goToImplementation"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "ctrl+t"
+      ],
+      "commands": [
+        "editor.action.rename"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "ctrl+f"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "r"
+      ],
+      "commands": [
+        "editor.action.goToReferences"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "s"
+      ],
+      "after": [
+        "leader",
+        "leader",
+        "s"
+      ]
+    },
+    {
+      "before": [
+        "U"
+      ],
+      "after": [
+        "ctrl+r",
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "a"
+      ],
+      "after": [
+        "0"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "l"
+      ],
+      "after": [
+        "$"
+      ]
+    },
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "g",
+        "a"
+      ],
+      "after": [
+        "0"
+      ]
+    },
+    {
+      "before": [
+        "s"
+      ],
+      "after": [
+        "leader",
+        "leader",
+        "s"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "l"
+      ],
+      "after": [
+        "$"
+      ]
+    },
+  ],
+  "vim.operatorPendingModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "g",
+        "a"
+      ],
+      "after": [
+        "0"
+      ]
+    },
+    {
+      "before": [
+        "s"
+      ],
+      "after": [
+        "leader",
+        "leader",
+        "s"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "l"
+      ],
+      "after": [
+        "$"
+      ]
+    },
+  ],
+  "editor.stickyScroll.enabled": true,
+  "workbench.iconTheme": "vscode-icons",
+  "vsicons.dontShowNewVersionMessage": true,
+  "explorer.confirmDelete": false,
+  "git.openRepositoryInParentFolders": "never",
+  "gomod.autoReveal": true,
+  "editor.scrollBeyondLastLine": false,
+  "editor.padding.bottom": 300,
+  "workbench.activityBar.visible": false,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "go.testExplorer.enable": false,
+  "go.testExplorer.packageDisplayMode": "nested",
+  "explorer.confirmDragAndDrop": false,
+  "window.newWindowDimensions": "fullscreen",
+  "window.openFoldersInNewWindow": "on",
+  "window.restoreFullscreen": true,
+}

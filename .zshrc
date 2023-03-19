@@ -60,7 +60,7 @@ zle -N zle-line-init
 
 # Ruby stuff
 eval "$(rbenv init -)"
-export PATH="~/.rbenv/shims:/opt/homebrew/opt/go@1.16/bin:$GOPATH/bin:$PATH:$HOME/work/setup/scripts:$GOPATH/bin"
+export PATH="~/.rbenv/shims:/opt/homebrew/opt/go@1.16/bin:$GOPATH/bin:$PATH:$HOME/work/setup/scripts:$GOPATH/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # gcloud-sdk
 source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
